@@ -1,0 +1,42 @@
+{
+  "author": "mozuraa",
+  "updated": "2026-11-10",
+  "skills": [
+    {
+      "name": "ideias-apps",
+      "category": "ideias",
+      "version": "1.0.0",
+      "repo": "https://github.com/mozuraa/claude-skill-ideias-apps",
+      "description_pt": "Ideias detalhadas de apps e jogos novos para criar e publicar.",
+      "description_en": "Detailed ideas for new apps and games to build and ship.",
+      "license": "MIT"
+    },
+    {
+      "name": "ideias-funcionalidades",
+      "category": "ideias",
+      "version": "1.0.0",
+      "repo": "https://github.com/mozuraa/claude-skill-ideias-funcionalidades",
+      "description_pt": "Ideias de funcionalidades novas para uma app ou jogo que já existe.",
+      "description_en": "New feature ideas for an existing app or game.",
+      "license": "MIT"
+    },
+    {
+      "name": "ideias-monetizacao",
+      "category": "ideias",
+      "version": "1.0.0",
+      "repo": "https://github.com/mozuraa/claude-skill-ideias-monetizacao",
+      "description_pt": "Ideias de monetização justas para apps e jogos.",
+      "description_en": "Fair monetization ideas for apps and games.",
+      "license": "MIT"
+    },
+    {
+      "name": "brainstorming",
+      "category": "ideias",
+      "version": "1.0.0",
+      "repo": "https://github.com/mozuraa/claude-skill-brainstorming",
+      "description_pt": "Brainstorming detalhado sobre qualquer tema.",
+      "description_en": "Detailed brainstorming on any topic.",
+      "license": "MIT"
+    }
+  ]
+}
