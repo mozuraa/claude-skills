@@ -1,0 +1,18 @@
+{
+  "name": "ideias",
+  "version": "1.0.0",
+  "description": "Ideias detalhadas: apps e jogos novos, funcionalidades, monetização e brainstorming sobre qualquer tema · Detailed ideas: new apps & games, features, monetization and brainstorming on any topic.",
+  "author": {
+    "name": "mozuraa",
+    "url": "https://github.com/mozuraa"
+  },
+  "homepage": "https://github.com/mozuraa/claude-skills/tree/main/ideias",
+  "repository": "https://github.com/mozuraa/claude-skills",
+  "license": "MIT",
+  "keywords": [
+    "ideas",
+    "brainstorming",
+    "apps",
+    "monetization"
+  ]
+}

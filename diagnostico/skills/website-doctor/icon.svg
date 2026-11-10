@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Website doctor: janela de browser com um batimento cardíaco e um estetoscópio">
+  <defs>
+    <filter id="wobble" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="11" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <g filter="url(#wobble)" stroke="#2B2B2B" stroke-linecap="round" stroke-linejoin="round">
+    <!-- fundo -->
+    <rect x="12" y="12" width="232" height="232" rx="52" fill="#DFF5EA" stroke-width="5"/>
+
+    <!-- rabiscos -->
+    <path d="M36 32 L36 48 M28 40 L44 40" fill="none" stroke-width="4"/>
+    <circle cx="26" cy="120" r="4.5" fill="none" stroke-width="3.5"/>
+
+    <!-- janela do browser -->
+    <rect x="40" y="56" width="176" height="132" rx="14" fill="#FFFFFF" stroke-width="6"/>
+    <path d="M54 56 H202 Q216 56 216 70 V84 H40 V70 Q40 56 54 56 Z" fill="#BFE3FF" stroke-width="6"/>
+    <circle cx="57" cy="70" r="4.5" fill="#FF6B4A" stroke-width="2.5"/>
+    <circle cx="71" cy="70" r="4.5" fill="#FFD43B" stroke-width="2.5"/>
+    <circle cx="85" cy="70" r="4.5" fill="#5BBF5B" stroke-width="2.5"/>
+    <rect x="100" y="64" width="100" height="12" rx="6" fill="#FFFFFF" stroke-width="3"/>
+
+    <!-- batimento -->
+    <path d="M54 138 L90 138 L100 114 L112 162 L124 102 L136 150 L144 138 L176 138" fill="none" stroke="#FF4D6D" stroke-width="6.5"/>
+
+    <!-- estetoscópio -->
+    <path d="M200 34 L210 50 L220 32" fill="none" stroke-width="5"/>
+    <circle cx="199" cy="31" r="4.5" fill="#2B2B2B" stroke="none"/>
+    <circle cx="221" cy="29" r="4.5" fill="#2B2B2B" stroke="none"/>
+    <path d="M210 50 C234 74 236 120 229 150 C223 175 214 186 206 194" fill="none" stroke-width="6"/>
+    <circle cx="198" cy="208" r="17" fill="#D9D9E3" stroke-width="6"/>
+    <circle cx="198" cy="208" r="7" fill="#FFFFFF" stroke-width="3"/>
+
+    <!-- visto de saudável -->
+    <path d="M40 212 L52 223 L74 198" fill="none" stroke="#2EAD6B" stroke-width="7"/>
+  </g>
+</svg>

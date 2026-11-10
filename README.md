@@ -1,7 +1,9 @@
 # Claude Skills — biblioteca de mozuraa
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-![Skills](https://img.shields.io/badge/skills-5-D97757)
+![Skills](https://img.shields.io/badge/skills-7-D97757)
+![Categorias](https://img.shields.io/badge/categorias-3-2EAD6B)
+![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin%20marketplace-8A63D2)
 
 **[Português](#português) · [English](#english)**
 
@@ -9,129 +11,218 @@
 
 ## Português
 
-Todas as [skills](#o-que-é-uma-skill) para o **Claude** que criei, num só sítio. Cada skill vive no seu próprio repositório público, com instruções de instalação, exemplos e licença MIT. Esta página é o catálogo.
+Todas as [skills](#o-que-é-uma-skill) para o **Claude** que criei, organizadas por categoria. Cada skill está completa aqui dentro e também tem o seu próprio repositório público, com instruções, exemplos e licença MIT.
+
+### Categorias
+
+| | Categoria | Skills |
+|---|---|---|
+| 💡 | **[Ideias](ideias/)** | `ideias-apps` · `ideias-funcionalidades` · `ideias-monetizacao` · `brainstorming` |
+| 🧑‍💻 | **[Programação](programacao/)** | `code-for-noobs` |
+| 🩺 | **[Diagnóstico](diagnostico/)** | `website-doctor` · `app-doctor` |
+
+### Que skill uso?
+
+| Quero... | Skill |
+|---|---|
+| uma ideia para uma app ou jogo **novo** | [`ideias-apps`](ideias/skills/ideias-apps/SKILL.md) |
+| melhorar uma app que **já tenho** | [`ideias-funcionalidades`](ideias/skills/ideias-funcionalidades/SKILL.md) |
+| ganhar dinheiro com a minha app | [`ideias-monetizacao`](ideias/skills/ideias-monetizacao/SKILL.md) |
+| ideias sobre **outra coisa qualquer** | [`brainstorming`](ideias/skills/brainstorming/SKILL.md) |
+| perceber código, um erro ou um termo técnico | [`code-for-noobs`](programacao/skills/code-for-noobs/SKILL.md) |
+| saber o que está mal no meu **site** e corrigir | [`website-doctor`](diagnostico/skills/website-doctor/SKILL.md) |
+| saber o que está mal na minha **app** e se está pronta para a loja | [`app-doctor`](diagnostico/skills/app-doctor/SKILL.md) |
+
+Não precisas de escolher: com as skills instaladas, o Claude usa a certa sozinho quando o pedido encaixa.
 
 ### Catálogo
 
 #### 💡 Ideias
 
-| Skill | O que faz | Versão |
-|---|---|---|
-| [**ideias-apps**](https://github.com/mozuraa/claude-skill-ideias-apps) | Ideias detalhadas de **apps e jogos novos** que uma pessoa sozinha consegue construir e publicar: público, ciclo principal, modelo de negócio, esforço, primeiros passos e riscos. | 1.0.0 |
-| [**ideias-funcionalidades**](https://github.com/mozuraa/claude-skill-ideias-funcionalidades) | Ideias de **funcionalidades novas para uma app ou jogo que já existe**, verificadas contra o código e com os ficheiros onde encaixam. | 1.0.0 |
-| [**ideias-monetizacao**](https://github.com/mozuraa/claude-skill-ideias-monetizacao) | Estratégias de **monetização** justas para apps e jogos, com preços concretos, momento certo e regras da App Store e do Google Play. | 1.0.0 |
-| [**brainstorming**](https://github.com/mozuraa/claude-skill-brainstorming) | **Brainstorming sobre qualquer tema** — presentes, nomes, eventos, negócios — com as 2–3 melhores ideias, distintas e prontas a pôr em prática. | 1.0.0 |
+| | Skill | O que faz | Versão |
+|---|---|---|---|
+| | [**ideias-apps**](https://github.com/mozuraa/claude-skill-ideias-apps) | Ideias detalhadas de **apps e jogos novos** que uma pessoa sozinha consegue construir e publicar: público, ciclo principal, modelo de negócio, esforço, primeiros passos e riscos. | 1.0.0 |
+| | [**ideias-funcionalidades**](https://github.com/mozuraa/claude-skill-ideias-funcionalidades) | Ideias de **funcionalidades novas para uma app ou jogo que já existe**, verificadas contra o código e com os ficheiros onde encaixam. | 1.0.0 |
+| | [**ideias-monetizacao**](https://github.com/mozuraa/claude-skill-ideias-monetizacao) | Estratégias de **monetização** justas, com preços concretos, momento certo e regras da App Store e do Google Play. | 1.0.0 |
+| | [**brainstorming**](https://github.com/mozuraa/claude-skill-brainstorming) | **Brainstorming sobre qualquer tema** — presentes, nomes, eventos, negócios — com as 2–3 melhores ideias, prontas a pôr em prática. | 1.0.0 |
 
 #### 🧑‍💻 Programação
 
-| Skill | O que faz | Versão |
-|---|---|---|
-| <img src="https://raw.githubusercontent.com/mozuraa/claude-skill-code-for-noobs/main/icon.svg" width="28" align="center" alt=""> [**code-for-noobs**](https://github.com/mozuraa/claude-skill-code-for-noobs) | Explica **código, erros e programação a quem nunca programou**, em linguagem simples, com analogias do dia a dia e um glossário de 40+ termos. | 1.0.0 |
+| | Skill | O que faz | Versão |
+|---|---|---|---|
+| <img src="programacao/skills/code-for-noobs/icon.svg" width="32" alt=""> | [**code-for-noobs**](https://github.com/mozuraa/claude-skill-code-for-noobs) | Explica **código, erros e programação a quem nunca programou**, em linguagem simples, com analogias e um glossário de 40+ termos. | 1.0.0 |
+
+#### 🩺 Diagnóstico
+
+| | Skill | O que faz | Versão |
+|---|---|---|---|
+| <img src="diagnostico/skills/website-doctor/icon.svg" width="32" alt=""> | [**website-doctor**](https://github.com/mozuraa/claude-skill-website-doctor) | **Médico de websites**: faz perguntas, examina 12 áreas (150+ verificações) — funcionamento, layout e alinhamentos, imagens, desempenho, segurança, privacidade/RGPD, acessibilidade, SEO e mais —, mostra um relatório de saúde com a sua opinião e corrige o que autorizares. | 1.0.0 |
+| <img src="diagnostico/skills/app-doctor/icon.svg" width="32" alt=""> | [**app-doctor**](https://github.com/mozuraa/claude-skill-app-doctor) | **Médico de apps** (iOS, Android, Flutter, React Native): crashes, layout em todos os ecrãs, segurança, privacidade, acessibilidade, compras e regras da App Store e do Google Play (140+ verificações) — com relatório, opinião e correções. | 1.0.0 |
 
 A lista também existe em formato de dados em [`skills.json`](skills.json).
 
 ### Instalar
 
-**Uma skill (Claude Code)** — troca `NOME` pelo nome da skill:
+**1. Claude Code — como plugin (recomendado).** No Claude Code, escreve:
+
+```
+/plugin marketplace add mozuraa/claude-skills
+```
+
+E depois instala as categorias que quiseres:
+
+```
+/plugin install ideias@mozuraa-skills
+/plugin install programacao@mozuraa-skills
+/plugin install diagnostico@mozuraa-skills
+```
+
+As atualizações chegam com `/plugin marketplace update mozuraa-skills`. Instaladas assim, as skills aparecem com o nome da categoria à frente (ex.: `/diagnostico:website-doctor`).
+
+**2. Claude Code — skills soltas.** Uma skill (troca `NOME`):
 
 ```bash
 git clone https://github.com/mozuraa/claude-skill-NOME.git ~/.claude/skills/NOME
 ```
 
-**Todas de uma vez (Claude Code):**
+Todas de uma vez:
 
 ```bash
-for s in ideias-apps ideias-funcionalidades ideias-monetizacao brainstorming code-for-noobs; do git clone https://github.com/mozuraa/claude-skill-$s.git ~/.claude/skills/$s; done
+for s in ideias-apps ideias-funcionalidades ideias-monetizacao brainstorming code-for-noobs website-doctor app-doctor; do git clone https://github.com/mozuraa/claude-skill-$s.git ~/.claude/skills/$s; done
 ```
 
-Abre uma sessão nova do Claude Code para as skills serem carregadas.
-
-**App Claude / claude.ai:** abre o repositório da skill, carrega em **Code → Download ZIP** e carrega o ZIP nas **Definições**, na secção **Skills** (em *Capacidades*).
-
-**Atualizar todas:**
+Atualizar todas:
 
 ```bash
-for s in ideias-apps ideias-funcionalidades ideias-monetizacao brainstorming code-for-noobs; do git -C ~/.claude/skills/$s pull; done
+for s in ideias-apps ideias-funcionalidades ideias-monetizacao brainstorming code-for-noobs website-doctor app-doctor; do git -C ~/.claude/skills/$s pull; done
 ```
+
+**3. App Claude / claude.ai.** Abre o repositório da skill, carrega em **Code → Download ZIP** e carrega o ZIP nas **Definições**, na secção **Skills** (em *Capacidades*).
+
+Abre uma sessão nova depois de instalar.
+
+### Como está organizado
+
+```
+claude-skills/
+├── .claude-plugin/marketplace.json   # catálogo de plugins para o Claude Code
+├── ideias/                           # 💡 plugin "ideias"
+│   ├── .claude-plugin/plugin.json
+│   └── skills/
+│       ├── ideias-apps/
+│       ├── ideias-funcionalidades/
+│       ├── ideias-monetizacao/
+│       └── brainstorming/
+├── programacao/                      # 🧑‍💻 plugin "programacao"
+│   └── skills/code-for-noobs/
+├── diagnostico/                      # 🩺 plugin "diagnostico"
+│   └── skills/
+│       ├── website-doctor/
+│       └── app-doctor/
+├── skills.json                       # a lista em formato de dados
+└── scripts/sincronizar.sh            # copia as skills dos repositórios individuais para aqui
+```
+
+Cada skill tem o seu `SKILL.md` e, quando precisa, `references/` (listas e guias), `examples/` e `icon.svg`. Os repositórios individuais são a fonte; esta biblioteca guarda cópias organizadas, atualizadas com `scripts/sincronizar.sh`.
 
 ### O que é uma skill?
 
-Uma skill é uma pasta com um ficheiro `SKILL.md`: um nome, uma descrição de quando deve ser usada e instruções. O Claude lê só a descrição até ela ser útil; quando o pedido encaixa, carrega as instruções e segue-as. Não instala programas nem corre código — é só texto.
+Uma skill é uma pasta com um ficheiro `SKILL.md`: um nome, uma descrição de quando deve ser usada e instruções. O Claude lê só a descrição até ela ser útil; quando o pedido encaixa, carrega as instruções e segue-as. Não instala programas — é texto com instruções.
 
 ### Princípios destas skills
 
-- **Poucas respostas, bem pensadas** — 2 a 3 ideias desenvolvidas em vez de listas longas.
-- **Formato fixo** — cada ideia tem sempre as mesmas secções, fáceis de comparar.
-- **Qualquer língua** — as instruções estão em português, mas o Claude responde na língua em que lhe escreves.
-- **Livres** — licença MIT: usa, altera e partilha.
+- **Qualidade acima de quantidade:** poucas respostas, bem pensadas e com provas.
+- **Formato fixo:** as mesmas secções sempre, fáceis de comparar.
+- **Opinião honesta:** as skills dizem o que fariam e porquê, mas tu decides.
+- **Seguras:** os médicos só examinam projetos teus e nunca atacam nada.
+- **Qualquer língua:** as instruções estão em português, mas o Claude responde na língua em que lhe escreves.
+- **Livres:** licença MIT.
 
 ### Sugestões
 
-Encontraste um problema ou tens uma ideia para uma skill? Abre uma *issue* no repositório da skill (ou [aqui](https://github.com/mozuraa/claude-skills/issues) para ideias de skills novas).
+Encontraste um problema ou tens uma ideia para uma skill? Abre uma *issue* no repositório da skill, ou [aqui](https://github.com/mozuraa/claude-skills/issues) para ideias de skills novas.
 
 ---
 
 ## English
 
-All the [skills](#what-is-a-skill) for **Claude** that I've created, in one place. Each skill lives in its own public repository with installation instructions, examples and an MIT license. This page is the catalog.
+All the [skills](#what-is-a-skill) for **Claude** that I've created, organized by category. Every skill is included here in full and also has its own public repository with instructions, examples and an MIT license.
+
+### Categories
+
+| | Category | Skills |
+|---|---|---|
+| 💡 | **[Ideas](ideias/)** (`ideias`) | `ideias-apps` · `ideias-funcionalidades` · `ideias-monetizacao` · `brainstorming` |
+| 🧑‍💻 | **[Programming](programacao/)** (`programacao`) | `code-for-noobs` |
+| 🩺 | **[Diagnostics](diagnostico/)** (`diagnostico`) | `website-doctor` · `app-doctor` |
+
+### Which skill do I need?
+
+| I want... | Skill |
+|---|---|
+| an idea for a **new** app or game | `ideias-apps` |
+| to improve an app I **already have** | `ideias-funcionalidades` |
+| to make money from my app | `ideias-monetizacao` |
+| ideas about **anything else** | `brainstorming` |
+| to understand code, an error or a technical term | `code-for-noobs` |
+| to find and fix what's wrong with my **website** | `website-doctor` |
+| to find and fix what's wrong with my **app**, and know if it's store-ready | `app-doctor` |
+
+You don't have to choose: once installed, Claude picks the right one on its own when a request matches.
 
 ### Catalog
 
-#### 💡 Ideas
-
-| Skill | What it does | Version |
+| Category | Skill | What it does |
 |---|---|---|
-| [**ideias-apps**](https://github.com/mozuraa/claude-skill-ideias-apps) | Detailed ideas for **new apps and games** a solo developer can build and ship: audience, core loop, business model, effort, first steps and risks. | 1.0.0 |
-| [**ideias-funcionalidades**](https://github.com/mozuraa/claude-skill-ideias-funcionalidades) | **New feature ideas for an existing app or game**, checked against the code and pointing to the files they touch. | 1.0.0 |
-| [**ideias-monetizacao**](https://github.com/mozuraa/claude-skill-ideias-monetizacao) | Fair **monetization** strategies for apps and games, with concrete prices, the right timing and App Store / Google Play rules. | 1.0.0 |
-| [**brainstorming**](https://github.com/mozuraa/claude-skill-brainstorming) | **Brainstorming on any topic** — gifts, names, events, businesses — with the 2–3 best, distinct, ready-to-act ideas. | 1.0.0 |
-
-#### 🧑‍💻 Programming
-
-| Skill | What it does | Version |
-|---|---|---|
-| <img src="https://raw.githubusercontent.com/mozuraa/claude-skill-code-for-noobs/main/icon.svg" width="28" align="center" alt=""> [**code-for-noobs**](https://github.com/mozuraa/claude-skill-code-for-noobs) | Explains **code, errors and programming to people who have never coded**, in plain language, with everyday analogies and a 40+ term glossary. | 1.0.0 |
+| 💡 | [**ideias-apps**](https://github.com/mozuraa/claude-skill-ideias-apps) | Detailed ideas for **new apps and games** a solo developer can build and ship. |
+| 💡 | [**ideias-funcionalidades**](https://github.com/mozuraa/claude-skill-ideias-funcionalidades) | **New feature ideas for an existing app or game**, checked against the code. |
+| 💡 | [**ideias-monetizacao**](https://github.com/mozuraa/claude-skill-ideias-monetizacao) | Fair **monetization** strategies with concrete prices and store rules. |
+| 💡 | [**brainstorming**](https://github.com/mozuraa/claude-skill-brainstorming) | **Brainstorming on any topic**, with the 2–3 best ready-to-act ideas. |
+| 🧑‍💻 | [**code-for-noobs**](https://github.com/mozuraa/claude-skill-code-for-noobs) | Explains **code, errors and programming to people who have never coded**. |
+| 🩺 | [**website-doctor**](https://github.com/mozuraa/claude-skill-website-doctor) | **Website doctor**: 12 areas, 150+ checks (functionality, layout, images, performance, security, privacy/GDPR, accessibility, SEO...), health report with its opinion, and approved fixes. |
+| 🩺 | [**app-doctor**](https://github.com/mozuraa/claude-skill-app-doctor) | **App doctor** (iOS, Android, Flutter, React Native): crashes, layout, security, privacy, accessibility, purchases and App Store / Google Play rules (140+ checks). |
 
 The list is also available as data in [`skills.json`](skills.json).
 
 ### Install
 
-**One skill (Claude Code)** — replace `NAME` with the skill name:
+**1. Claude Code, as a plugin (recommended):**
 
-```bash
-git clone https://github.com/mozuraa/claude-skill-NAME.git ~/.claude/skills/NAME
+```
+/plugin marketplace add mozuraa/claude-skills
+/plugin install ideias@mozuraa-skills
+/plugin install programacao@mozuraa-skills
+/plugin install diagnostico@mozuraa-skills
 ```
 
-**All at once (Claude Code):**
+Update with `/plugin marketplace update mozuraa-skills`. Installed this way, skills are prefixed with their category (e.g. `/diagnostico:website-doctor`).
+
+**2. Claude Code, standalone skills:**
 
 ```bash
-for s in ideias-apps ideias-funcionalidades ideias-monetizacao brainstorming code-for-noobs; do git clone https://github.com/mozuraa/claude-skill-$s.git ~/.claude/skills/$s; done
+for s in ideias-apps ideias-funcionalidades ideias-monetizacao brainstorming code-for-noobs website-doctor app-doctor; do git clone https://github.com/mozuraa/claude-skill-$s.git ~/.claude/skills/$s; done
 ```
 
-Start a new Claude Code session so the skills are loaded.
+**3. Claude app / claude.ai:** open the skill's repository, click **Code → Download ZIP** and upload it in **Settings**, under **Skills** (in *Capabilities*).
 
-**Claude app / claude.ai:** open the skill's repository, click **Code → Download ZIP** and upload it in **Settings**, under **Skills** (in *Capabilities*).
-
-**Update all:**
-
-```bash
-for s in ideias-apps ideias-funcionalidades ideias-monetizacao brainstorming code-for-noobs; do git -C ~/.claude/skills/$s pull; done
-```
+Start a new session after installing.
 
 ### What is a skill?
 
-A skill is a folder with a `SKILL.md` file: a name, a description of when it should be used, and instructions. Claude only reads the description until it becomes relevant; when a request matches, it loads the instructions and follows them. It installs no programs and runs no code — it's just text.
+A skill is a folder with a `SKILL.md` file: a name, a description of when it should be used, and instructions. Claude only reads the description until it becomes relevant; when a request matches, it loads the instructions and follows them.
 
 ### Principles
 
-- **Few, well-thought-out answers** — 2–3 developed ideas instead of long lists.
-- **Fixed format** — every idea has the same sections, easy to compare.
-- **Any language** — instructions are in Portuguese, but Claude replies in the language you write in.
-- **Free** — MIT license: use, modify and share.
+- **Quality over quantity:** few, well-thought-out answers backed by evidence.
+- **Fixed format:** the same sections every time, easy to compare.
+- **Honest opinions:** skills say what they'd do and why, but you decide.
+- **Safe:** the doctors only examine your own projects and never attack anything.
+- **Any language:** instructions are in Portuguese, but Claude replies in the language you write in.
+- **Free:** MIT license.
 
 ### Feedback
 
-Found a problem or have an idea for a skill? Open an issue in the skill's repository (or [here](https://github.com/mozuraa/claude-skills/issues) for new skill ideas).
+Found a problem or have an idea for a skill? Open an issue in the skill's repository, or [here](https://github.com/mozuraa/claude-skills/issues) for new skill ideas.
 
 ---
 

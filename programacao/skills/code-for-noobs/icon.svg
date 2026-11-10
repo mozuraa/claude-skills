@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Code for noobs: um pintainho confuso em cima de um portátil com o símbolo de código">
+  <defs>
+    <filter id="wobble" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <g filter="url(#wobble)" stroke="#2B2B2B" stroke-linecap="round" stroke-linejoin="round">
+    <!-- fundo -->
+    <rect x="12" y="12" width="232" height="232" rx="52" fill="#FFF4DC" stroke-width="5"/>
+
+    <!-- rabiscos de fundo -->
+    <path d="M44 40 L44 58 M35 49 L53 49" fill="none" stroke-width="4"/>
+    <circle cx="38" cy="132" r="5" fill="none" stroke-width="3.5"/>
+    <path d="M222 146 L230 154 M230 146 L222 154" fill="none" stroke-width="3.5"/>
+    <path d="M30 214 Q38 206 46 214 T62 214" fill="none" stroke="#3D7BFF" stroke-width="3.5"/>
+
+    <!-- ecrã do portátil -->
+    <rect x="54" y="68" width="146" height="102" rx="12" fill="#BFE3FF" stroke-width="6"/>
+    <rect x="66" y="80" width="122" height="78" rx="6" fill="#FFFFFF" stroke-width="3.5"/>
+
+    <!-- </> -->
+    <path d="M108 104 L93 119 L108 134" fill="none" stroke="#FF6B4A" stroke-width="7.5"/>
+    <path d="M121 138 L134 100" fill="none" stroke="#FF6B4A" stroke-width="7.5"/>
+    <path d="M147 104 L162 119 L147 134" fill="none" stroke="#FF6B4A" stroke-width="7.5"/>
+
+    <!-- base do portátil -->
+    <path d="M38 176 L218 176 L230 196 Q232 204 223 204 L33 204 Q24 204 26 196 Z" fill="#E6E6EC" stroke-width="6"/>
+    <path d="M110 190 L146 190" fill="none" stroke-width="4"/>
+
+    <!-- pintainho (o noob) -->
+    <path d="M172 64 Q162 72 171 82" fill="none" stroke-width="5"/>
+    <circle cx="198" cy="62" r="27" fill="#FFD43B" stroke-width="6"/>
+    <path d="M194 35 Q195 25 200 32 Q204 24 207 34" fill="none" stroke-width="4"/>
+    <circle cx="189" cy="58" r="3.8" fill="#2B2B2B" stroke="none"/>
+    <circle cx="206" cy="58" r="3.8" fill="#2B2B2B" stroke="none"/>
+    <path d="M192 66 L203 66 L197.5 74 Z" fill="#FF9F1C" stroke-width="3"/>
+    <ellipse cx="182" cy="69" rx="4.5" ry="2.6" fill="#FF8FA3" stroke="none"/>
+    <ellipse cx="213" cy="69" rx="4.5" ry="2.6" fill="#FF8FA3" stroke="none"/>
+
+    <!-- ponto de interrogação -->
+    <path d="M146 30 Q146 20 156 20 Q166 20 166 29 Q166 36 158 40 L158 46" fill="none" stroke="#3D7BFF" stroke-width="5"/>
+    <circle cx="158" cy="55" r="3.2" fill="#3D7BFF" stroke="none"/>
+  </g>
+</svg>

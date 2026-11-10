@@ -1,0 +1,17 @@
+{
+  "name": "programacao",
+  "version": "1.0.0",
+  "description": "Aprender e perceber programação: explica código, erros e termos técnicos a principiantes, sem jargão · Learn programming: explains code, errors and jargon to beginners.",
+  "author": {
+    "name": "mozuraa",
+    "url": "https://github.com/mozuraa"
+  },
+  "homepage": "https://github.com/mozuraa/claude-skills/tree/main/programacao",
+  "repository": "https://github.com/mozuraa/claude-skills",
+  "license": "MIT",
+  "keywords": [
+    "beginners",
+    "learn-to-code",
+    "eli5"
+  ]
+}

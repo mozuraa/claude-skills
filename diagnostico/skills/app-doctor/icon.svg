@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="App doctor: telemóvel com um batimento cardíaco, um penso rápido e um estetoscópio">
+  <defs>
+    <filter id="wobble" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="5" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <g filter="url(#wobble)" stroke="#2B2B2B" stroke-linecap="round" stroke-linejoin="round">
+    <!-- fundo -->
+    <rect x="12" y="12" width="232" height="232" rx="52" fill="#ECE6FF" stroke-width="5"/>
+
+    <!-- rabiscos -->
+    <circle cx="36" cy="64" r="4.5" fill="none" stroke-width="3.5"/>
+
+    <!-- telemóvel -->
+    <rect x="82" y="30" width="92" height="178" rx="20" fill="#FFFFFF" stroke-width="6"/>
+    <rect x="92" y="48" width="72" height="134" rx="8" fill="#DFF0FF" stroke-width="3"/>
+    <path d="M116 39 L140 39" fill="none" stroke-width="4"/>
+    <path d="M116 195 L140 195" fill="none" stroke-width="4"/>
+
+    <!-- batimento -->
+    <path d="M97 118 L110 118 L116 100 L124 138 L132 90 L140 128 L146 118 L159 118" fill="none" stroke="#FF4D6D" stroke-width="5.5"/>
+
+    <!-- penso rápido -->
+    <g transform="rotate(-35 96 50)">
+      <rect x="66" y="39" width="60" height="22" rx="11" fill="#FFC9A8" stroke-width="5"/>
+      <rect x="86" y="39" width="20" height="22" fill="#F6A97F" stroke-width="3"/>
+      <circle cx="74" cy="50" r="1.6" fill="#2B2B2B" stroke="none"/>
+      <circle cx="117" cy="50" r="1.6" fill="#2B2B2B" stroke="none"/>
+    </g>
+
+    <!-- estetoscópio -->
+    <path d="M196 34 L206 52 L218 32" fill="none" stroke-width="5"/>
+    <circle cx="195" cy="31" r="4.5" fill="#2B2B2B" stroke="none"/>
+    <circle cx="219" cy="29" r="4.5" fill="#2B2B2B" stroke="none"/>
+    <path d="M206 52 C228 86 228 146 210 178" fill="none" stroke-width="6"/>
+    <circle cx="202" cy="194" r="17" fill="#D9D9E3" stroke-width="6"/>
+    <circle cx="202" cy="194" r="7" fill="#FFFFFF" stroke-width="3"/>
+
+    <!-- coração -->
+    <path d="M50 134 C32 120 36 100 50 110 C64 100 68 120 50 134 Z" fill="#FF8FA3" stroke-width="4"/>
+
+    <!-- visto de saudável -->
+    <path d="M34 206 L46 217 L68 192" fill="none" stroke="#2EAD6B" stroke-width="7"/>
+  </g>
+</svg>

@@ -1,12 +1,20 @@
 {
   "author": "mozuraa",
   "updated": "2026-11-10",
+  "marketplace": "mozuraa-skills",
+  "categories": {
+    "ideias": "💡 Ideias / Ideas",
+    "programacao": "🧑‍💻 Programação / Programming",
+    "diagnostico": "🩺 Diagnóstico / Diagnostics"
+  },
   "skills": [
     {
       "name": "ideias-apps",
       "category": "ideias",
+      "plugin": "ideias@mozuraa-skills",
       "version": "1.0.0",
       "repo": "https://github.com/mozuraa/claude-skill-ideias-apps",
+      "path": "ideias/skills/ideias-apps",
       "description_pt": "Ideias detalhadas de apps e jogos novos para criar e publicar.",
       "description_en": "Detailed ideas for new apps and games to build and ship.",
       "license": "MIT"
@@ -14,8 +22,10 @@
     {
       "name": "ideias-funcionalidades",
       "category": "ideias",
+      "plugin": "ideias@mozuraa-skills",
       "version": "1.0.0",
       "repo": "https://github.com/mozuraa/claude-skill-ideias-funcionalidades",
+      "path": "ideias/skills/ideias-funcionalidades",
       "description_pt": "Ideias de funcionalidades novas para uma app ou jogo que já existe.",
       "description_en": "New feature ideas for an existing app or game.",
       "license": "MIT"
@@ -23,8 +33,10 @@
     {
       "name": "ideias-monetizacao",
       "category": "ideias",
+      "plugin": "ideias@mozuraa-skills",
       "version": "1.0.0",
       "repo": "https://github.com/mozuraa/claude-skill-ideias-monetizacao",
+      "path": "ideias/skills/ideias-monetizacao",
       "description_pt": "Ideias de monetização justas para apps e jogos.",
       "description_en": "Fair monetization ideas for apps and games.",
       "license": "MIT"
@@ -32,8 +44,10 @@
     {
       "name": "brainstorming",
       "category": "ideias",
+      "plugin": "ideias@mozuraa-skills",
       "version": "1.0.0",
       "repo": "https://github.com/mozuraa/claude-skill-brainstorming",
+      "path": "ideias/skills/brainstorming",
       "description_pt": "Brainstorming detalhado sobre qualquer tema.",
       "description_en": "Detailed brainstorming on any topic.",
       "license": "MIT"
@@ -41,12 +55,38 @@
     {
       "name": "code-for-noobs",
       "category": "programacao",
+      "plugin": "programacao@mozuraa-skills",
       "version": "1.0.0",
       "repo": "https://github.com/mozuraa/claude-skill-code-for-noobs",
-      "icon": "https://raw.githubusercontent.com/mozuraa/claude-skill-code-for-noobs/main/icon.svg",
+      "path": "programacao/skills/code-for-noobs",
       "description_pt": "Explica código, erros e programação a principiantes totais, sem jargão.",
       "description_en": "Explains code, errors and programming to total beginners, no jargon.",
-      "license": "MIT"
+      "license": "MIT",
+      "icon": "https://raw.githubusercontent.com/mozuraa/claude-skill-code-for-noobs/main/icon.svg"
+    },
+    {
+      "name": "website-doctor",
+      "category": "diagnostico",
+      "plugin": "diagnostico@mozuraa-skills",
+      "version": "1.0.0",
+      "repo": "https://github.com/mozuraa/claude-skill-website-doctor",
+      "path": "diagnostico/skills/website-doctor",
+      "description_pt": "Médico de websites: diagnostica, dá opinião e corrige erros, layout, imagens, desempenho, segurança, privacidade/RGPD, acessibilidade e SEO.",
+      "description_en": "Website doctor: diagnoses, advises on and fixes errors, layout, images, performance, security, privacy/GDPR, accessibility and SEO.",
+      "license": "MIT",
+      "icon": "https://raw.githubusercontent.com/mozuraa/claude-skill-website-doctor/main/icon.svg"
+    },
+    {
+      "name": "app-doctor",
+      "category": "diagnostico",
+      "plugin": "diagnostico@mozuraa-skills",
+      "version": "1.0.0",
+      "repo": "https://github.com/mozuraa/claude-skill-app-doctor",
+      "path": "diagnostico/skills/app-doctor",
+      "description_pt": "Médico de apps (iOS, Android, Flutter, React Native): crashes, layout, segurança, privacidade, acessibilidade, compras e regras das lojas.",
+      "description_en": "App doctor (iOS, Android, Flutter, React Native): crashes, layout, security, privacy, accessibility, purchases and store rules.",
+      "license": "MIT",
+      "icon": "https://raw.githubusercontent.com/mozuraa/claude-skill-app-doctor/main/icon.svg"
     }
   ]
 }

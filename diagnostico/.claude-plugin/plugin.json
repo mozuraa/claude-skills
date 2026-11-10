@@ -1,0 +1,21 @@
+{
+  "name": "diagnostico",
+  "version": "1.0.0",
+  "description": "Médicos de websites e apps: diagnosticam, dão opinião e corrigem erros, layout, imagens, desempenho, segurança, privacidade, acessibilidade, SEO e regras das lojas · Website & app doctors.",
+  "author": {
+    "name": "mozuraa",
+    "url": "https://github.com/mozuraa"
+  },
+  "homepage": "https://github.com/mozuraa/claude-skills/tree/main/diagnostico",
+  "repository": "https://github.com/mozuraa/claude-skills",
+  "license": "MIT",
+  "keywords": [
+    "debugging",
+    "audit",
+    "security",
+    "privacy",
+    "accessibility",
+    "seo",
+    "app-store"
+  ]
+}

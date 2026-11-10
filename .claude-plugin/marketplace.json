@@ -1,0 +1,63 @@
+{
+  "name": "mozuraa-skills",
+  "owner": {
+    "name": "mozuraa",
+    "url": "https://github.com/mozuraa"
+  },
+  "metadata": {
+    "description": "Biblioteca de Claude Skills de mozuraa · mozuraa's Claude Skills library",
+    "version": "2.0.0"
+  },
+  "plugins": [
+    {
+      "name": "ideias",
+      "source": "./ideias",
+      "description": "Ideias detalhadas: apps e jogos novos, funcionalidades, monetização e brainstorming sobre qualquer tema · Detailed ideas: new apps & games, features, monetization and brainstorming on any topic.",
+      "version": "1.0.0",
+      "author": {
+        "name": "mozuraa"
+      },
+      "category": "productivity",
+      "keywords": [
+        "ideas",
+        "brainstorming",
+        "apps",
+        "monetization"
+      ]
+    },
+    {
+      "name": "programacao",
+      "source": "./programacao",
+      "description": "Aprender e perceber programação: explica código, erros e termos técnicos a principiantes, sem jargão · Learn programming: explains code, errors and jargon to beginners.",
+      "version": "1.0.0",
+      "author": {
+        "name": "mozuraa"
+      },
+      "category": "productivity",
+      "keywords": [
+        "beginners",
+        "learn-to-code",
+        "eli5"
+      ]
+    },
+    {
+      "name": "diagnostico",
+      "source": "./diagnostico",
+      "description": "Médicos de websites e apps: diagnosticam, dão opinião e corrigem erros, layout, imagens, desempenho, segurança, privacidade, acessibilidade, SEO e regras das lojas · Website & app doctors.",
+      "version": "1.0.0",
+      "author": {
+        "name": "mozuraa"
+      },
+      "category": "development",
+      "keywords": [
+        "debugging",
+        "audit",
+        "security",
+        "privacy",
+        "accessibility",
+        "seo",
+        "app-store"
+      ]
+    }
+  ]
+}
