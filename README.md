@@ -1,7 +1,7 @@
 # Claude Skills — biblioteca de mozuraa
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-![Skills](https://img.shields.io/badge/skills-4-D97757)
+![Skills](https://img.shields.io/badge/skills-5-D97757)
 
 **[Português](#português) · [English](#english)**
 
@@ -22,6 +22,12 @@ Todas as [skills](#o-que-é-uma-skill) para o **Claude** que criei, num só sít
 | [**ideias-monetizacao**](https://github.com/mozuraa/claude-skill-ideias-monetizacao) | Estratégias de **monetização** justas para apps e jogos, com preços concretos, momento certo e regras da App Store e do Google Play. | 1.0.0 |
 | [**brainstorming**](https://github.com/mozuraa/claude-skill-brainstorming) | **Brainstorming sobre qualquer tema** — presentes, nomes, eventos, negócios — com as 2–3 melhores ideias, distintas e prontas a pôr em prática. | 1.0.0 |
 
+#### 🧑‍💻 Programação
+
+| Skill | O que faz | Versão |
+|---|---|---|
+| <img src="https://raw.githubusercontent.com/mozuraa/claude-skill-code-for-noobs/main/icon.svg" width="28" align="center" alt=""> [**code-for-noobs**](https://github.com/mozuraa/claude-skill-code-for-noobs) | Explica **código, erros e programação a quem nunca programou**, em linguagem simples, com analogias do dia a dia e um glossário de 40+ termos. | 1.0.0 |
+
 A lista também existe em formato de dados em [`skills.json`](skills.json).
 
 ### Instalar
@@ -35,7 +41,7 @@ git clone https://github.com/mozuraa/claude-skill-NOME.git ~/.claude/skills/NOME
 **Todas de uma vez (Claude Code):**
 
 ```bash
-for s in ideias-apps ideias-funcionalidades ideias-monetizacao brainstorming; do git clone https://github.com/mozuraa/claude-skill-$s.git ~/.claude/skills/$s; done
+for s in ideias-apps ideias-funcionalidades ideias-monetizacao brainstorming code-for-noobs; do git clone https://github.com/mozuraa/claude-skill-$s.git ~/.claude/skills/$s; done
 ```
 
 Abre uma sessão nova do Claude Code para as skills serem carregadas.
@@ -45,7 +51,7 @@ Abre uma sessão nova do Claude Code para as skills serem carregadas.
 **Atualizar todas:**
 
 ```bash
-for s in ideias-apps ideias-funcionalidades ideias-monetizacao brainstorming; do git -C ~/.claude/skills/$s pull; done
+for s in ideias-apps ideias-funcionalidades ideias-monetizacao brainstorming code-for-noobs; do git -C ~/.claude/skills/$s pull; done
 ```
 
 ### O que é uma skill?
@@ -80,6 +86,12 @@ All the [skills](#what-is-a-skill) for **Claude** that I've created, in one plac
 | [**ideias-monetizacao**](https://github.com/mozuraa/claude-skill-ideias-monetizacao) | Fair **monetization** strategies for apps and games, with concrete prices, the right timing and App Store / Google Play rules. | 1.0.0 |
 | [**brainstorming**](https://github.com/mozuraa/claude-skill-brainstorming) | **Brainstorming on any topic** — gifts, names, events, businesses — with the 2–3 best, distinct, ready-to-act ideas. | 1.0.0 |
 
+#### 🧑‍💻 Programming
+
+| Skill | What it does | Version |
+|---|---|---|
+| <img src="https://raw.githubusercontent.com/mozuraa/claude-skill-code-for-noobs/main/icon.svg" width="28" align="center" alt=""> [**code-for-noobs**](https://github.com/mozuraa/claude-skill-code-for-noobs) | Explains **code, errors and programming to people who have never coded**, in plain language, with everyday analogies and a 40+ term glossary. | 1.0.0 |
+
 The list is also available as data in [`skills.json`](skills.json).
 
 ### Install
@@ -93,7 +105,7 @@ git clone https://github.com/mozuraa/claude-skill-NAME.git ~/.claude/skills/NAME
 **All at once (Claude Code):**
 
 ```bash
-for s in ideias-apps ideias-funcionalidades ideias-monetizacao brainstorming; do git clone https://github.com/mozuraa/claude-skill-$s.git ~/.claude/skills/$s; done
+for s in ideias-apps ideias-funcionalidades ideias-monetizacao brainstorming code-for-noobs; do git clone https://github.com/mozuraa/claude-skill-$s.git ~/.claude/skills/$s; done
 ```
 
 Start a new Claude Code session so the skills are loaded.
@@ -103,7 +115,7 @@ Start a new Claude Code session so the skills are loaded.
 **Update all:**
 
 ```bash
-for s in ideias-apps ideias-funcionalidades ideias-monetizacao brainstorming; do git -C ~/.claude/skills/$s pull; done
+for s in ideias-apps ideias-funcionalidades ideias-monetizacao brainstorming code-for-noobs; do git -C ~/.claude/skills/$s pull; done
 ```
 
 ### What is a skill?

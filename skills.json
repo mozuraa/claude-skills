@@ -37,6 +37,16 @@
       "description_pt": "Brainstorming detalhado sobre qualquer tema.",
       "description_en": "Detailed brainstorming on any topic.",
       "license": "MIT"
+    },
+    {
+      "name": "code-for-noobs",
+      "category": "programacao",
+      "version": "1.0.0",
+      "repo": "https://github.com/mozuraa/claude-skill-code-for-noobs",
+      "icon": "https://raw.githubusercontent.com/mozuraa/claude-skill-code-for-noobs/main/icon.svg",
+      "description_pt": "Explica código, erros e programação a principiantes totais, sem jargão.",
+      "description_en": "Explains code, errors and programming to total beginners, no jargon.",
+      "license": "MIT"
     }
   ]
 }
