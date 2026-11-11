@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Website studio: janela de browser com uma página a ser desenhada, uma lâmpada de ideia e um estetoscópio">
+  <defs>
+    <filter id="wobble" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="23" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <g filter="url(#wobble)" stroke="#2B2B2B" stroke-linecap="round" stroke-linejoin="round">
+    <!-- fundo -->
+    <rect x="12" y="12" width="232" height="232" rx="52" fill="#FFF1D6" stroke-width="5"/>
+
+    <!-- 🩺 estetoscópio (diagnosticar), à esquerda -->
+    <path d="M38 44 L46 60 L56 42" fill="none" stroke-width="5"/>
+    <circle cx="37" cy="41" r="4.5" fill="#2B2B2B" stroke="none"/>
+    <circle cx="57" cy="39" r="4.5" fill="#2B2B2B" stroke="none"/>
+    <path d="M46 60 C26 86 24 128 29 154 C33 175 40 186 50 194" fill="none" stroke-width="6"/>
+
+    <!-- janela do browser -->
+    <rect x="58" y="62" width="158" height="132" rx="14" fill="#FFFFFF" stroke-width="6"/>
+    <path d="M72 62 H202 Q216 62 216 76 V90 H58 V76 Q58 62 72 62 Z" fill="#BFE3FF" stroke-width="6"/>
+    <circle cx="74" cy="76" r="4.5" fill="#FF6B4A" stroke-width="2.5"/>
+    <circle cx="88" cy="76" r="4.5" fill="#FFD43B" stroke-width="2.5"/>
+    <circle cx="102" cy="76" r="4.5" fill="#5BBF5B" stroke-width="2.5"/>
+
+    <!-- página em construção -->
+    <rect x="72" y="104" width="70" height="11" rx="5" fill="#FF6B4A" stroke-width="2.5"/>
+    <rect x="72" y="122" width="58" height="6" rx="3" fill="#D9D9E3" stroke="none"/>
+    <rect x="72" y="133" width="48" height="6" rx="3" fill="#D9D9E3" stroke="none"/>
+    <rect x="72" y="146" width="40" height="13" rx="6.5" fill="#3D7BFF" stroke-width="2.5"/>
+    <rect x="150" y="104" width="52" height="50" rx="6" fill="#DFF5EA" stroke-width="3"/>
+    <path d="M154 148 L170 126 L180 138 L186 130 L198 148 Z" fill="#5BBF5B" stroke-width="2.5"/>
+    <circle cx="188" cy="115" r="5" fill="#FFD43B" stroke-width="2.5"/>
+    <rect x="72" y="170" width="38" height="16" rx="4" fill="none" stroke-width="2.5" stroke-dasharray="5 4"/>
+    <rect x="118" y="170" width="38" height="16" rx="4" fill="none" stroke-width="2.5" stroke-dasharray="5 4"/>
+    <path d="M164 186 L164 170 L192 170" fill="none" stroke-width="2.5" stroke-dasharray="5 4"/>
+
+    <!-- 🩺 auscultador por cima da janela -->
+    <circle cx="58" cy="206" r="16" fill="#D9D9E3" stroke-width="6"/>
+    <circle cx="58" cy="206" r="6.5" fill="#FFFFFF" stroke-width="3"/>
+
+    <!-- 💡 lâmpada (idear), em cima à direita -->
+    <path d="M188 34 L184 30 M204 26 L204 20 M220 34 L224 30" fill="none" stroke="#E0A000" stroke-width="3.5"/>
+    <circle cx="204" cy="40" r="11" fill="#FFD43B" stroke-width="4"/>
+    <rect x="198" y="50" width="12" height="7" rx="2" fill="#C9C9D6" stroke-width="3"/>
+
+    <!-- ✏️ lápis (criar) -->
+    <g transform="translate(208 166) rotate(35) scale(.75)">
+      <rect x="-8" y="-62" width="16" height="12" rx="3" fill="#FF8FA3" stroke-width="5"/>
+      <rect x="-8" y="-50" width="16" height="7" fill="#C9C9D6" stroke-width="4"/>
+      <rect x="-8" y="-43" width="16" height="63" fill="#FFD43B" stroke-width="5"/>
+      <path d="M-8 20 L8 20 L0 38 Z" fill="#F6D7B0" stroke-width="5"/>
+      <path d="M-3 29 L3 29 L0 38 Z" fill="#2B2B2B" stroke="none"/>
+    </g>
+  </g>
+</svg>

@@ -1,6 +1,6 @@
 ---
 name: brainstorming
-description: Brainstorming geral sobre QUALQUER tema — gera ideias detalhadas e bem pensadas para nomes, presentes, eventos, negócios, conteúdos, soluções para um problema, planos, o que for. Usa sempre que o utilizador pedir "ideias para...", "ajuda-me a pensar em...", "dá-me sugestões de...", "brainstorm", "give me ideas for...", "não sei o que fazer com...", ou estiver bloqueado e precisar de opções. Se o tema for especificamente apps/jogos novos, funcionalidades de uma app existente ou monetização, prefere as skills ideias-apps, ideias-funcionalidades ou ideias-monetizacao.
+description: Brainstorming geral sobre QUALQUER tema — gera ideias detalhadas e bem pensadas para nomes, presentes, eventos, negócios, conteúdos, soluções para um problema, planos, o que for. Usa sempre que o utilizador pedir "ideias para...", "ajuda-me a pensar em...", "dá-me sugestões de...", "brainstorm", "give me ideas for...", "não sei o que fazer com...", ou estiver bloqueado e precisar de opções. Se o tema for especificamente apps/jogos novos ou websites, funcionalidades de uma app existente ou monetização, prefere as skills app-studio, website-studio, ideias-funcionalidades ou ideias-monetizacao.
 ---
 
 # Brainstorming geral

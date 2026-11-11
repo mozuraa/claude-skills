@@ -1,0 +1,22 @@
+{
+  "name": "estudios",
+  "version": "1.0.0",
+  "description": "Estúdios completos de websites e de apps, cada um com 3 modos: 💡 Idear, 🛠️ Criar e 🩺 Diagnosticar · Complete website and app studios, each with Ideate, Create and Diagnose modes.",
+  "author": {
+    "name": "mozuraa",
+    "url": "https://github.com/mozuraa"
+  },
+  "homepage": "https://github.com/mozuraa/claude-skills/tree/main/estudios",
+  "repository": "https://github.com/mozuraa/claude-skills",
+  "license": "MIT",
+  "keywords": [
+    "website-builder",
+    "app-development",
+    "debugging",
+    "audit",
+    "security",
+    "privacy",
+    "accessibility",
+    "app-store"
+  ]
+}

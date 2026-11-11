@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Biblioteca de Claude Skills de mozuraa · mozuraa's Claude Skills library",
-    "version": "2.1.0"
+    "version": "3.0.0"
   },
   "plugins": [
     {
       "name": "ideias",
       "source": "./ideias",
-      "description": "Ideias detalhadas: apps e jogos novos, funcionalidades, monetização e brainstorming sobre qualquer tema · Detailed ideas: new apps & games, features, monetization and brainstorming on any topic.",
-      "version": "1.0.0",
+      "description": "Ideias detalhadas: funcionalidades para apps existentes, monetização justa e brainstorming sobre qualquer tema · Detailed ideas: features, monetization and brainstorming on any topic.",
+      "version": "1.1.0",
       "author": {
         "name": "mozuraa"
       },
@@ -21,14 +21,14 @@
       "keywords": [
         "ideas",
         "brainstorming",
-        "apps",
+        "features",
         "monetization"
       ]
     },
     {
-      "name": "criacao",
-      "source": "./criacao",
-      "description": "Constrói contigo, de raiz: websites completos com briefing, plano com opinião, design, verificação e lançamento, e um site-base pronto · Builds with you from scratch: complete websites with briefing, opinionated plan, design, checks and launch, plus a starter site.",
+      "name": "estudios",
+      "source": "./estudios",
+      "description": "Estúdios completos de websites e de apps, cada um com 3 modos: 💡 Idear, 🛠️ Criar e 🩺 Diagnosticar · Complete website and app studios, each with Ideate, Create and Diagnose modes.",
       "version": "1.0.0",
       "author": {
         "name": "mozuraa"
@@ -36,10 +36,13 @@
       "category": "development",
       "keywords": [
         "website-builder",
-        "web-design",
-        "starter-template",
+        "app-development",
+        "debugging",
+        "audit",
+        "security",
+        "privacy",
         "accessibility",
-        "seo"
+        "app-store"
       ]
     },
     {
@@ -55,25 +58,6 @@
         "beginners",
         "learn-to-code",
         "eli5"
-      ]
-    },
-    {
-      "name": "diagnostico",
-      "source": "./diagnostico",
-      "description": "Médicos de websites e apps: diagnosticam, dão opinião e corrigem erros, layout, imagens, desempenho, segurança, privacidade, acessibilidade, SEO e regras das lojas · Website & app doctors.",
-      "version": "1.0.0",
-      "author": {
-        "name": "mozuraa"
-      },
-      "category": "development",
-      "keywords": [
-        "debugging",
-        "audit",
-        "security",
-        "privacy",
-        "accessibility",
-        "seo",
-        "app-store"
       ]
     }
   ]

@@ -1,6 +1,6 @@
 ---
 name: ideias-funcionalidades
-description: Gera ideias detalhadas de funcionalidades novas para uma app ou jogo que JÁ EXISTE — modos de jogo, níveis, power-ups, ecrãs, melhorias de retenção, coisas que tornem a app mais divertida ou útil. Usa sempre que o utilizador perguntar "o que posso adicionar ao meu jogo/app", "ideias para a minha app", "como tornar isto mais viciante", "novo modo", "que feature falta", "feature ideas", ou quiser melhorar um projeto existente, mesmo sem dizer "ideia". Não usar para apps totalmente novas (ideias-apps) nem só para preços/dinheiro (ideias-monetizacao).
+description: Gera ideias detalhadas de funcionalidades novas para uma app ou jogo que JÁ EXISTE — modos de jogo, níveis, power-ups, ecrãs, melhorias de retenção, coisas que tornem a app mais divertida ou útil. Usa sempre que o utilizador perguntar "o que posso adicionar ao meu jogo/app", "ideias para a minha app", "como tornar isto mais viciante", "novo modo", "que feature falta", "feature ideas", ou quiser melhorar um projeto existente, mesmo sem dizer "ideia". Não usar para apps totalmente novas (app-studio) nem só para preços/dinheiro (ideias-monetizacao).
 ---
 
 # Ideias de funcionalidades para uma app existente

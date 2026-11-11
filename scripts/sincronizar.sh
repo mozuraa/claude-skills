@@ -13,14 +13,12 @@ BIBLIOTECA="$(cd "$(dirname "$0")/.." && pwd)"
 ORIGEM="${ORIGEM:-$(dirname "$BIBLIOTECA")}"
 
 SKILLS="
-ideias ideias-apps
 ideias ideias-funcionalidades
 ideias ideias-monetizacao
 ideias brainstorming
-criacao website-builder
+estudios website-studio
+estudios app-studio
 programacao code-for-noobs
-diagnostico website-doctor
-diagnostico app-doctor
 "
 
 echo "$SKILLS" | while read -r categoria nome; do
