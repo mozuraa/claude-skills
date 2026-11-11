@@ -1,0 +1,12 @@
+{
+  "name": "[Nome da marca]",
+  "short_name": "[Marca]",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#fffdf8",
+  "theme_color": "#a8401f",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

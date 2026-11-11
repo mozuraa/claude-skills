@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="pt-PT"><!-- TODO: língua do site (pt-PT, en, es...) -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- TODO: título único (~50–60 caracteres) e descrição única (~120–160) -->
+  <title>[Nome da marca] — [benefício principal em poucas palavras]</title>
+  <meta name="description" content="[Uma ou duas frases: o que oferece, para quem e onde.]">
+  <!-- TODO: domínio final em canonical, og:url e og:image -->
+  <link rel="canonical" href="https://exemplo.pt/">
+  <meta name="theme-color" content="#fffdf8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#16140f" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:site_name" content="[Nome da marca]">
+  <meta property="og:title" content="[Nome da marca] — [benefício principal]">
+  <meta property="og:description" content="[Uma ou duas frases para a pré-visualização ao partilhar.]">
+  <meta property="og:url" content="https://exemplo.pt/">
+  <meta property="og:image" content="https://exemplo.pt/og.jpg"><!-- TODO: imagem 1200×630 em /og.jpg -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png"><!-- TODO: PNG 180×180 -->
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/css/styles.css">
+  <!-- Sem defer de propósito: marca <html class="js"> antes de desenhar, para o menu móvel não piscar (ficheiro de ~1 KB) -->
+  <script src="/js/main.js"></script>
+
+  <!-- TODO: tipo e dados reais (LocalBusiness, Restaurant, Organization, MobileApplication...) — ver references/paginas.md -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "[Nome da marca]",
+    "url": "https://exemplo.pt/",
+    "telephone": "+351 000 000 000",
+    "address": { "@type": "PostalAddress", "streetAddress": "[Rua e número]", "addressLocality": "[Cidade]", "postalCode": "[0000-000]", "addressCountry": "PT" }
+  }
+  </script>
+</head>
+<body>
+  <a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
+
+  <header class="cabecalho">
+    <div class="contentor cabecalho__linha">
+      <a class="marca" href="/" aria-label="[Nome da marca] — página inicial">
+        <img src="/favicon.svg" alt="" width="32" height="32"><!-- TODO: logótipo (SVG de preferência) -->
+        <span>[Nome da marca]</span>
+      </a>
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="menu-botao__icone" aria-hidden="true"></span>
+        <span class="menu-botao__texto">Menu</span>
+      </button>
+      <nav class="navegacao" id="menu" aria-label="Principal">
+        <ul>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#como-funciona">Como funciona</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#perguntas">Perguntas</a></li>
+          <li><a class="botao botao--pequeno" href="#contactos">Contactar</a></li><!-- TODO: ação principal -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- Topo: benefício + ação principal, visível sem scroll no telemóvel -->
+    <section class="topo">
+      <div class="contentor topo__grelha">
+        <div class="topo__texto">
+          <p class="sobretitulo">[Para quem · onde]</p>
+          <h1>[Título com o benefício principal para o visitante]</h1>
+          <p class="topo__subtitulo">[Uma ou duas frases concretas: o que faz, como e porque é diferente.]</p>
+          <div class="acoes">
+            <a class="botao" href="#contactos">[Ação principal]</a>
+            <a class="botao botao--secundario" href="#servicos">[Ação secundária]</a>
+          </div>
+        </div>
+        <!-- TODO: fotografia real (AVIF/WebP, width/height, alt, fetchpriority="high") no lugar desta forma -->
+        <div class="topo__imagem" aria-hidden="true">
+          <svg viewBox="0 0 400 400" class="forma-assinatura"><path d="M320 64c52 44 70 132 36 200s-128 108-204 92S20 286 28 206 96 54 176 36s92-16 144 28Z"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccao" id="servicos" aria-labelledby="titulo-servicos">
+      <div class="contentor">
+        <h2 id="titulo-servicos">[O que oferecemos]</h2>
+        <p class="introducao">[Uma frase que resume os serviços ou produtos.]</p>
+        <ul class="grelha cartoes" role="list">
+          <li class="cartao">
+            <h3>[Serviço 1]</h3>
+            <p>[O que é e o que o cliente ganha, numa ou duas frases.]</p>
+          </li>
+          <li class="cartao">
+            <h3>[Serviço 2]</h3>
+            <p>[O que é e o que o cliente ganha, numa ou duas frases.]</p>
+          </li>
+          <li class="cartao">
+            <h3>[Serviço 3]</h3>
+            <p>[O que é e o que o cliente ganha, numa ou duas frases.]</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="seccao seccao--suave" id="como-funciona" aria-labelledby="titulo-como">
+      <div class="contentor">
+        <h2 id="titulo-como">Como funciona</h2>
+        <ol class="grelha passos" role="list">
+          <li class="passo"><h3>[Passo 1]</h3><p>[O que acontece primeiro.]</p></li>
+          <li class="passo"><h3>[Passo 2]</h3><p>[O que acontece a seguir.]</p></li>
+          <li class="passo"><h3>[Passo 3]</h3><p>[O resultado para o cliente.]</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- TODO: só testemunhos reais, com autorização; se não houver, remover a secção -->
+    <section class="seccao" aria-label="Testemunho">
+      <div class="contentor">
+        <figure class="testemunho">
+          <blockquote><p>“[Testemunho real de um cliente, curto e específico.]”</p></blockquote>
+          <figcaption>[Nome], <span>[contexto: cidade, serviço]</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="seccao seccao--suave" id="sobre" aria-labelledby="titulo-sobre">
+      <div class="contentor texto-estreito">
+        <h2 id="titulo-sobre">[Sobre nós]</h2>
+        <p>[Quem está por trás, porquê existe e o que a torna diferente — com factos, não adjetivos.]</p>
+      </div>
+    </section>
+
+    <section class="seccao" id="perguntas" aria-labelledby="titulo-perguntas">
+      <div class="contentor texto-estreito">
+        <h2 id="titulo-perguntas">Perguntas frequentes</h2>
+        <div class="perguntas">
+          <details><summary>[Pergunta frequente 1]</summary><p>[Resposta clara e curta.]</p></details>
+          <details><summary>[Pergunta frequente 2]</summary><p>[Resposta clara e curta.]</p></details>
+          <details><summary>[Pergunta frequente 3]</summary><p>[Resposta clara e curta.]</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccao seccao--destaque" id="contactos" aria-labelledby="titulo-contactos">
+      <div class="contentor contactos">
+        <div>
+          <h2 id="titulo-contactos">[Fale connosco]</h2>
+          <p>[Tempo de resposta esperado, ex.: respondemos em 24 horas úteis.]</p>
+          <ul class="lista-contactos" role="list">
+            <li><a href="tel:+351000000000">+351 000 000 000</a></li><!-- TODO -->
+            <li><a href="mailto:ola@exemplo.pt">ola@exemplo.pt</a></li><!-- TODO -->
+            <li>[Rua e número, código postal, cidade]</li>
+            <li>[Horário: segunda a sexta, 9h–18h]</li>
+          </ul>
+        </div>
+        <!-- TODO: serviço de formulários (Formspree, Netlify Forms, função própria) — ver references/stack.md.
+             Se mudares o domínio do action, atualiza form-action no _headers e no vercel.json. -->
+        <form class="formulario" action="https://formspree.io/f/TODO" method="post">
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" autocomplete="name" required>
+          </div>
+          <div class="campo">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="campo">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+          </div>
+          <!-- Armadilha anti-spam: escondida das pessoas, preenchida por bots -->
+          <div class="armadilha" aria-hidden="true">
+            <label for="_gotcha">Não preencher</label>
+            <input id="_gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <p class="nota">Usamos estes dados só para responder. Ver a <a href="/privacidade.html">política de privacidade</a>.</p>
+          <button class="botao" type="submit">Enviar mensagem</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="contentor rodape__grelha">
+      <div>
+        <p class="marca marca--rodape">[Nome da marca]</p>
+        <p>[Morada] · <a href="tel:+351000000000">+351 000 000 000</a></p>
+      </div>
+      <nav aria-label="Legal">
+        <ul role="list">
+          <li><a href="/privacidade.html">Privacidade</a></li>
+          <!-- TODO: Portugal, negócios com consumidores -->
+          <li><a href="https://www.livroreclamacoes.pt" rel="noopener">Livro de Reclamações</a></li>
+        </ul>
+      </nav>
+      <p class="rodape__direitos">© <span data-ano>2026</span> [Nome legal]. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>

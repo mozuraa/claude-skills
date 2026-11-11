@@ -1,8 +1,8 @@
 # Claude Skills — biblioteca de mozuraa
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-![Skills](https://img.shields.io/badge/skills-7-D97757)
-![Categorias](https://img.shields.io/badge/categorias-3-2EAD6B)
+![Skills](https://img.shields.io/badge/skills-8-D97757)
+![Categorias](https://img.shields.io/badge/categorias-4-2EAD6B)
 ![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin%20marketplace-8A63D2)
 
 **[Português](#português) · [English](#english)**
@@ -18,6 +18,7 @@ Todas as [skills](#o-que-é-uma-skill) para o **Claude** que criei, organizadas 
 | | Categoria | Skills |
 |---|---|---|
 | 💡 | **[Ideias](ideias/)** | `ideias-apps` · `ideias-funcionalidades` · `ideias-monetizacao` · `brainstorming` |
+| 🛠️ | **[Criação](criacao/)** | `website-builder` |
 | 🧑‍💻 | **[Programação](programacao/)** | `code-for-noobs` |
 | 🩺 | **[Diagnóstico](diagnostico/)** | `website-doctor` · `app-doctor` |
 
@@ -29,6 +30,7 @@ Todas as [skills](#o-que-é-uma-skill) para o **Claude** que criei, organizadas 
 | melhorar uma app que **já tenho** | [`ideias-funcionalidades`](ideias/skills/ideias-funcionalidades/SKILL.md) |
 | ganhar dinheiro com a minha app | [`ideias-monetizacao`](ideias/skills/ideias-monetizacao/SKILL.md) |
 | ideias sobre **outra coisa qualquer** | [`brainstorming`](ideias/skills/brainstorming/SKILL.md) |
+| **criar um site** de raiz | [`website-builder`](criacao/skills/website-builder/SKILL.md) |
 | perceber código, um erro ou um termo técnico | [`code-for-noobs`](programacao/skills/code-for-noobs/SKILL.md) |
 | saber o que está mal no meu **site** e corrigir | [`website-doctor`](diagnostico/skills/website-doctor/SKILL.md) |
 | saber o que está mal na minha **app** e se está pronta para a loja | [`app-doctor`](diagnostico/skills/app-doctor/SKILL.md) |
@@ -46,6 +48,12 @@ Não precisas de escolher: com as skills instaladas, o Claude usa a certa sozinh
 | | [**ideias-monetizacao**](https://github.com/mozuraa/claude-skill-ideias-monetizacao) | Estratégias de **monetização** justas, com preços concretos, momento certo e regras da App Store e do Google Play. | 1.0.0 |
 | | [**brainstorming**](https://github.com/mozuraa/claude-skill-brainstorming) | **Brainstorming sobre qualquer tema** — presentes, nomes, eventos, negócios — com as 2–3 melhores ideias, prontas a pôr em prática. | 1.0.0 |
 
+#### 🛠️ Criação
+
+| | Skill | O que faz | Versão |
+|---|---|---|---|
+| <img src="criacao/skills/website-builder/icon.svg" width="32" alt=""> | [**website-builder**](https://github.com/mozuraa/claude-skill-website-builder) | **Cria websites completos de raiz, contigo**: briefing, plano com a sua opinião (tecnologia, alojamento e custos), identidade visual, página inicial para aprovares, resto do site, verificação (Lighthouse ≥ 90, acessibilidade, privacidade) e lançamento com domínio e email. Inclui 6 guias e um site-base pronto. | 1.0.0 |
+
 #### 🧑‍💻 Programação
 
 | | Skill | O que faz | Versão |
@@ -56,7 +64,7 @@ Não precisas de escolher: com as skills instaladas, o Claude usa a certa sozinh
 
 | | Skill | O que faz | Versão |
 |---|---|---|---|
-| <img src="diagnostico/skills/website-doctor/icon.svg" width="32" alt=""> | [**website-doctor**](https://github.com/mozuraa/claude-skill-website-doctor) | **Médico de websites**: faz perguntas, examina 12 áreas (150+ verificações) — funcionamento, layout e alinhamentos, imagens, desempenho, segurança, privacidade/RGPD, acessibilidade, SEO e mais —, mostra um relatório de saúde com a sua opinião e corrige o que autorizares. | 1.0.0 |
+| <img src="diagnostico/skills/website-doctor/icon.svg" width="32" alt=""> | [**website-doctor**](https://github.com/mozuraa/claude-skill-website-doctor) | **Médico de websites**: faz perguntas, examina 12 áreas (150+ verificações) — funcionamento, layout e alinhamentos, imagens, desempenho, segurança, privacidade/RGPD, acessibilidade, SEO e mais —, mostra um relatório de saúde com a sua opinião e corrige o que autorizares. | 1.0.1 |
 | <img src="diagnostico/skills/app-doctor/icon.svg" width="32" alt=""> | [**app-doctor**](https://github.com/mozuraa/claude-skill-app-doctor) | **Médico de apps** (iOS, Android, Flutter, React Native): crashes, layout em todos os ecrãs, segurança, privacidade, acessibilidade, compras e regras da App Store e do Google Play (140+ verificações) — com relatório, opinião e correções. | 1.0.0 |
 
 A lista também existe em formato de dados em [`skills.json`](skills.json).
@@ -73,6 +81,7 @@ E depois instala as categorias que quiseres:
 
 ```
 /plugin install ideias@mozuraa-skills
+/plugin install criacao@mozuraa-skills
 /plugin install programacao@mozuraa-skills
 /plugin install diagnostico@mozuraa-skills
 ```
@@ -88,13 +97,13 @@ git clone https://github.com/mozuraa/claude-skill-NOME.git ~/.claude/skills/NOME
 Todas de uma vez:
 
 ```bash
-for s in ideias-apps ideias-funcionalidades ideias-monetizacao brainstorming code-for-noobs website-doctor app-doctor; do git clone https://github.com/mozuraa/claude-skill-$s.git ~/.claude/skills/$s; done
+for s in ideias-apps ideias-funcionalidades ideias-monetizacao brainstorming website-builder code-for-noobs website-doctor app-doctor; do git clone https://github.com/mozuraa/claude-skill-$s.git ~/.claude/skills/$s; done
 ```
 
 Atualizar todas:
 
 ```bash
-for s in ideias-apps ideias-funcionalidades ideias-monetizacao brainstorming code-for-noobs website-doctor app-doctor; do git -C ~/.claude/skills/$s pull; done
+for s in ideias-apps ideias-funcionalidades ideias-monetizacao brainstorming website-builder code-for-noobs website-doctor app-doctor; do git -C ~/.claude/skills/$s pull; done
 ```
 
 **3. App Claude / claude.ai.** Abre o repositório da skill, carrega em **Code → Download ZIP** e carrega o ZIP nas **Definições**, na secção **Skills** (em *Capacidades*).
@@ -113,6 +122,8 @@ claude-skills/
 │       ├── ideias-funcionalidades/
 │       ├── ideias-monetizacao/
 │       └── brainstorming/
+├── criacao/                          # 🛠️ plugin "criacao"
+│   └── skills/website-builder/
 ├── programacao/                      # 🧑‍💻 plugin "programacao"
 │   └── skills/code-for-noobs/
 ├── diagnostico/                      # 🩺 plugin "diagnostico"
@@ -123,7 +134,7 @@ claude-skills/
 └── scripts/sincronizar.sh            # copia as skills dos repositórios individuais para aqui
 ```
 
-Cada skill tem o seu `SKILL.md` e, quando precisa, `references/` (listas e guias), `examples/` e `icon.svg`. Os repositórios individuais são a fonte; esta biblioteca guarda cópias organizadas, atualizadas com `scripts/sincronizar.sh`.
+Cada skill tem o seu `SKILL.md` e, quando precisa, `references/` (listas e guias), `assets/` (ficheiros prontos a usar, como o site-base), `examples/` e `icon.svg`. Os repositórios individuais são a fonte; esta biblioteca guarda cópias organizadas, atualizadas com `scripts/sincronizar.sh`.
 
 ### O que é uma skill?
 
@@ -153,6 +164,7 @@ All the [skills](#what-is-a-skill) for **Claude** that I've created, organized b
 | | Category | Skills |
 |---|---|---|
 | 💡 | **[Ideas](ideias/)** (`ideias`) | `ideias-apps` · `ideias-funcionalidades` · `ideias-monetizacao` · `brainstorming` |
+| 🛠️ | **[Creation](criacao/)** (`criacao`) | `website-builder` |
 | 🧑‍💻 | **[Programming](programacao/)** (`programacao`) | `code-for-noobs` |
 | 🩺 | **[Diagnostics](diagnostico/)** (`diagnostico`) | `website-doctor` · `app-doctor` |
 
@@ -164,6 +176,7 @@ All the [skills](#what-is-a-skill) for **Claude** that I've created, organized b
 | to improve an app I **already have** | `ideias-funcionalidades` |
 | to make money from my app | `ideias-monetizacao` |
 | ideas about **anything else** | `brainstorming` |
+| to **build a website** from scratch | `website-builder` |
 | to understand code, an error or a technical term | `code-for-noobs` |
 | to find and fix what's wrong with my **website** | `website-doctor` |
 | to find and fix what's wrong with my **app**, and know if it's store-ready | `app-doctor` |
@@ -178,6 +191,7 @@ You don't have to choose: once installed, Claude picks the right one on its own 
 | 💡 | [**ideias-funcionalidades**](https://github.com/mozuraa/claude-skill-ideias-funcionalidades) | **New feature ideas for an existing app or game**, checked against the code. |
 | 💡 | [**ideias-monetizacao**](https://github.com/mozuraa/claude-skill-ideias-monetizacao) | Fair **monetization** strategies with concrete prices and store rules. |
 | 💡 | [**brainstorming**](https://github.com/mozuraa/claude-skill-brainstorming) | **Brainstorming on any topic**, with the 2–3 best ready-to-act ideas. |
+| 🛠️ | [**website-builder**](https://github.com/mozuraa/claude-skill-website-builder) | **Builds complete websites from scratch with you**: briefing, opinionated plan, visual identity, home page for your approval, the rest of the site, checks and launch. Includes 6 guides and a starter site. |
 | 🧑‍💻 | [**code-for-noobs**](https://github.com/mozuraa/claude-skill-code-for-noobs) | Explains **code, errors and programming to people who have never coded**. |
 | 🩺 | [**website-doctor**](https://github.com/mozuraa/claude-skill-website-doctor) | **Website doctor**: 12 areas, 150+ checks (functionality, layout, images, performance, security, privacy/GDPR, accessibility, SEO...), health report with its opinion, and approved fixes. |
 | 🩺 | [**app-doctor**](https://github.com/mozuraa/claude-skill-app-doctor) | **App doctor** (iOS, Android, Flutter, React Native): crashes, layout, security, privacy, accessibility, purchases and App Store / Google Play rules (140+ checks). |
@@ -191,6 +205,7 @@ The list is also available as data in [`skills.json`](skills.json).
 ```
 /plugin marketplace add mozuraa/claude-skills
 /plugin install ideias@mozuraa-skills
+/plugin install criacao@mozuraa-skills
 /plugin install programacao@mozuraa-skills
 /plugin install diagnostico@mozuraa-skills
 ```
@@ -200,7 +215,7 @@ Update with `/plugin marketplace update mozuraa-skills`. Installed this way, ski
 **2. Claude Code, standalone skills:**
 
 ```bash
-for s in ideias-apps ideias-funcionalidades ideias-monetizacao brainstorming code-for-noobs website-doctor app-doctor; do git clone https://github.com/mozuraa/claude-skill-$s.git ~/.claude/skills/$s; done
+for s in ideias-apps ideias-funcionalidades ideias-monetizacao brainstorming website-builder code-for-noobs website-doctor app-doctor; do git clone https://github.com/mozuraa/claude-skill-$s.git ~/.claude/skills/$s; done
 ```
 
 **3. Claude app / claude.ai:** open the skill's repository, click **Code → Download ZIP** and upload it in **Settings**, under **Skills** (in *Capabilities*).

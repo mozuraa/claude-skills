@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Website builder: janela de browser com uma página a ser desenhada por um lápis">
+  <defs>
+    <filter id="wobble" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="17" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <g filter="url(#wobble)" stroke="#2B2B2B" stroke-linecap="round" stroke-linejoin="round">
+    <!-- fundo -->
+    <rect x="12" y="12" width="232" height="232" rx="52" fill="#FFE6D5" stroke-width="5"/>
+
+    <!-- rabiscos -->
+    <path d="M34 214 Q42 206 50 214 T66 214" fill="none" stroke="#3D7BFF" stroke-width="3.5"/>
+    <path d="M216 30 L220 42 L232 46 L220 50 L216 62 L212 50 L200 46 L212 42 Z" fill="#FFD43B" stroke-width="3"/>
+    <circle cx="23" cy="122" r="4.5" fill="none" stroke-width="3.5"/>
+
+    <!-- janela do browser -->
+    <rect x="36" y="50" width="164" height="138" rx="14" fill="#FFFFFF" stroke-width="6"/>
+    <path d="M50 50 H186 Q200 50 200 64 V78 H36 V64 Q36 50 50 50 Z" fill="#BFE3FF" stroke-width="6"/>
+    <circle cx="52" cy="64" r="4.5" fill="#FF6B4A" stroke-width="2.5"/>
+    <circle cx="66" cy="64" r="4.5" fill="#FFD43B" stroke-width="2.5"/>
+    <circle cx="80" cy="64" r="4.5" fill="#5BBF5B" stroke-width="2.5"/>
+
+    <!-- página em construção -->
+    <rect x="50" y="92" width="74" height="11" rx="5" fill="#FF6B4A" stroke-width="2.5"/>
+    <rect x="50" y="110" width="62" height="6" rx="3" fill="#D9D9E3" stroke="none"/>
+    <rect x="50" y="121" width="52" height="6" rx="3" fill="#D9D9E3" stroke="none"/>
+    <rect x="50" y="134" width="40" height="13" rx="6.5" fill="#3D7BFF" stroke-width="2.5"/>
+    <rect x="134" y="92" width="52" height="54" rx="6" fill="#DFF5EA" stroke-width="3"/>
+    <path d="M138 140 L154 118 L164 130 L170 122 L182 140 Z" fill="#5BBF5B" stroke-width="2.5"/>
+    <circle cx="172" cy="104" r="5" fill="#FFD43B" stroke-width="2.5"/>
+    <rect x="50" y="158" width="40" height="18" rx="4" fill="none" stroke-width="2.5" stroke-dasharray="5 4"/>
+    <rect x="98" y="158" width="40" height="18" rx="4" fill="none" stroke-width="2.5" stroke-dasharray="5 4"/>
+
+    <!-- lápis -->
+    <g transform="translate(196 160) rotate(35)">
+      <rect x="-8" y="-62" width="16" height="12" rx="3" fill="#FF8FA3" stroke-width="4"/>
+      <rect x="-8" y="-50" width="16" height="7" fill="#C9C9D6" stroke-width="3"/>
+      <rect x="-8" y="-43" width="16" height="63" fill="#FFD43B" stroke-width="4"/>
+      <path d="M-8 20 L8 20 L0 38 Z" fill="#F6D7B0" stroke-width="4"/>
+      <path d="M-3 29 L3 29 L0 38 Z" fill="#2B2B2B" stroke="none"/>
+    </g>
+  </g>
+</svg>

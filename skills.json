@@ -1,9 +1,10 @@
 {
   "author": "mozuraa",
-  "updated": "2026-11-10",
+  "updated": "2026-11-11",
   "marketplace": "mozuraa-skills",
   "categories": {
     "ideias": "💡 Ideias / Ideas",
+    "criacao": "🛠️ Criação / Creation",
     "programacao": "🧑‍💻 Programação / Programming",
     "diagnostico": "🩺 Diagnóstico / Diagnostics"
   },
@@ -53,6 +54,18 @@
       "license": "MIT"
     },
     {
+      "name": "website-builder",
+      "category": "criacao",
+      "plugin": "criacao@mozuraa-skills",
+      "version": "1.0.0",
+      "repo": "https://github.com/mozuraa/claude-skill-website-builder",
+      "path": "criacao/skills/website-builder",
+      "description_pt": "Cria websites completos de raiz, contigo: briefing, plano com opinião, design, construção, verificação e lançamento, com site-base pronto.",
+      "description_en": "Builds complete websites from scratch with you: briefing, opinionated plan, design, build, checks and launch, with a starter site.",
+      "license": "MIT",
+      "icon": "https://raw.githubusercontent.com/mozuraa/claude-skill-website-builder/main/icon.svg"
+    },
+    {
       "name": "code-for-noobs",
       "category": "programacao",
       "plugin": "programacao@mozuraa-skills",
@@ -68,7 +81,7 @@
       "name": "website-doctor",
       "category": "diagnostico",
       "plugin": "diagnostico@mozuraa-skills",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "repo": "https://github.com/mozuraa/claude-skill-website-doctor",
       "path": "diagnostico/skills/website-doctor",
       "description_pt": "Médico de websites: diagnostica, dá opinião e corrige erros, layout, imagens, desempenho, segurança, privacidade/RGPD, acessibilidade e SEO.",

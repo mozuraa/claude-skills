@@ -1,0 +1,5 @@
+# TODO: trocar exemplo.pt pelo domínio final
+User-agent: *
+Allow: /
+
+Sitemap: https://exemplo.pt/sitemap.xml

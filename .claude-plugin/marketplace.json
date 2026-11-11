@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Biblioteca de Claude Skills de mozuraa · mozuraa's Claude Skills library",
-    "version": "2.0.0"
+    "version": "2.1.0"
   },
   "plugins": [
     {
@@ -23,6 +23,23 @@
         "brainstorming",
         "apps",
         "monetization"
+      ]
+    },
+    {
+      "name": "criacao",
+      "source": "./criacao",
+      "description": "Constrói contigo, de raiz: websites completos com briefing, plano com opinião, design, verificação e lançamento, e um site-base pronto · Builds with you from scratch: complete websites with briefing, opinionated plan, design, checks and launch, plus a starter site.",
+      "version": "1.0.0",
+      "author": {
+        "name": "mozuraa"
+      },
+      "category": "development",
+      "keywords": [
+        "website-builder",
+        "web-design",
+        "starter-template",
+        "accessibility",
+        "seo"
       ]
     },
     {
