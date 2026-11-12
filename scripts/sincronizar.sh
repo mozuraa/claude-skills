@@ -20,6 +20,7 @@ estudios website-studio
 estudios app-studio
 programacao code-for-noobs
 ia prompt-studio
+lancamento launch-studio
 "
 
 echo "$SKILLS" | while read -r categoria nome; do

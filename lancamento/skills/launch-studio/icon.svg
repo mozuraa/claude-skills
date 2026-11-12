@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Launch studio: uma claquete de cinema com um botão de play, um foguetão a descolar e um megafone">
+  <defs>
+    <filter id="wobble" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <g filter="url(#wobble)" stroke="#2B2B2B" stroke-linecap="round" stroke-linejoin="round">
+    <!-- fundo -->
+    <rect x="12" y="12" width="232" height="232" rx="52" fill="#FFF4DC" stroke-width="5"/>
+
+    <!-- rabiscos de fundo -->
+    <path d="M44 38 L44 56 M35 47 L53 47" fill="none" stroke-width="4"/>
+    <circle cx="112" cy="36" r="5" fill="none" stroke-width="3.5"/>
+    <path d="M228 120 L228 136 M220 128 L236 128" fill="none" stroke="#3D7BFF" stroke-width="3.5"/>
+    <path d="M78 226 Q86 219 94 226 T110 226" fill="none" stroke="#3D7BFF" stroke-width="3.5"/>
+
+    <!-- claquete: corpo -->
+    <rect x="30" y="120" width="118" height="92" rx="10" fill="#FFFFFF" stroke-width="6"/>
+    <!-- claquete: faixa fixa às riscas -->
+    <rect x="30" y="120" width="118" height="20" fill="#FFD43B" stroke-width="5"/>
+    <path d="M46 120 L60 120 L50 140 L36 140 Z M74 120 L88 120 L78 140 L64 140 Z M102 120 L116 120 L106 140 L92 140 Z M130 120 L144 120 L134 140 L120 140 Z" fill="#2B2B2B" stroke="none"/>
+    <!-- claquete: braço aberto -->
+    <g transform="rotate(-14 30 120)">
+      <rect x="30" y="100" width="118" height="20" fill="#FFD43B" stroke-width="5"/>
+      <path d="M50 100 L64 100 L54 120 L40 120 Z M78 100 L92 100 L82 120 L68 120 Z M106 100 L120 100 L110 120 L96 120 Z M134 100 L146 100 L138 120 L124 120 Z" fill="#2B2B2B" stroke="none"/>
+    </g>
+    <circle cx="30" cy="120" r="4" fill="#2B2B2B" stroke="none"/>
+    <!-- play -->
+    <path d="M78 156 L78 194 L110 175 Z" fill="#FF6B4A" stroke-width="5"/>
+
+    <!-- foguetão -->
+    <g transform="translate(196 72) rotate(35)">
+      <path d="M-9 22 Q0 48 9 22 Z" fill="#FF9F1C" stroke-width="4"/>
+      <path d="M-4 23 Q0 36 4 23 Z" fill="#FFD43B" stroke="none"/>
+      <path d="M-14 6 L-26 26 L-13 22 Z" fill="#FF6B4A" stroke-width="4"/>
+      <path d="M14 6 L26 26 L13 22 Z" fill="#FF6B4A" stroke-width="4"/>
+      <path d="M0 -40 C16 -24 18 0 14 22 L-14 22 C-18 0 -16 -24 0 -40 Z" fill="#FFFFFF" stroke-width="5"/>
+      <circle cx="0" cy="-8" r="7" fill="#BFE3FF" stroke-width="4"/>
+    </g>
+    <!-- fumo -->
+    <circle cx="163" cy="123" r="5.5" fill="#FFFFFF" stroke-width="3.5"/>
+    <circle cx="173" cy="136" r="3.5" fill="#FFFFFF" stroke-width="3"/>
+
+    <!-- megafone -->
+    <path d="M182 194 L187 212 L196 212 L192 192" fill="#E6E6EC" stroke-width="4.5"/>
+    <rect x="160" y="174" width="12" height="18" rx="3" fill="#E6E6EC" stroke-width="4.5"/>
+    <path d="M172 172 L212 152 L212 214 L172 194 Z" fill="#FF6B4A" stroke-width="5"/>
+    <ellipse cx="212" cy="183" rx="8" ry="31" fill="#FFD43B" stroke-width="5"/>
+    <!-- ondas de som -->
+    <path d="M226 170 Q233 183 226 196" fill="none" stroke="#3D7BFF" stroke-width="4"/>
+  </g>
+</svg>

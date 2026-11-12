@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Composição · launch-studio</title>
+<!--
+  launch-studio · modelo de composição (motor 🎨 Estúdio)
+
+  Cada fotograma é função pura do tempo t. Nada de setTimeout, animações CSS a correr sozinhas
+  ou Math.random() — assim a captura fotograma a fotograma dá sempre o mesmo resultado.
+
+  Parâmetros do URL:
+    ?formato=9x16|1x1|16x9|4x5   tamanho do palco (por defeito 9x16)
+    &lingua=pt|en                língua dos textos
+    &t=3.2                       mostra só esse instante
+    &play=1                      reproduz em tempo real (pré-visualização e plano B: gravar o ecrã)
+    &guias=1                     mostra as zonas que as apps tapam
+    &legendas=1                  desenha as legendas
+    &captura=1                   tamanho real, sem ajustar à janela (usado por capturar.mjs)
+
+  API para a captura: window.pronto (Promise), window.duracao(), window.seek(t) (Promise).
+-->
+<style>
+  /* Fontes do projeto: copia os ficheiros para work/ e declara-os aqui. Nada de URLs externos durante a captura.
+  @font-face { font-family: "Marca"; src: url("../fontes/Marca-Bold.woff2") format("woff2"); font-weight: 700; }
+  */
+  html, body { margin: 0; background: #0b0b0d; }
+  body.preview { min-height: 100vh; display: grid; place-items: center; overflow: hidden; }
+  #janela { position: relative; overflow: hidden; }
+  #palco { position: absolute; left: 0; top: 0; overflow: hidden; transform-origin: 0 0;
+           -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision; }
+  .fundo, .camada { position: absolute; inset: 0; }
+  .el { position: absolute; left: 0; top: 0; will-change: transform, opacity; box-sizing: border-box; }
+  .texto { white-space: pre-line; line-height: 1.08; letter-spacing: -0.01em; }
+  .texto .cursor { display: inline-block; width: 0.08em; height: 0.9em; margin-left: 0.04em;
+                   vertical-align: -0.08em; background: currentColor; }
+  .imagem .vidro { position: relative; width: 100%; height: 100%; overflow: hidden; }
+  .imagem img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 50%; }
+  .falta { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 8%;
+           background: repeating-linear-gradient(45deg, #2a2d35 0 22px, #23262d 22px 44px);
+           color: #c9ced8; font: 600 28px/1.3 system-ui, sans-serif; }
+  /* moldura genérica (não imita nenhum aparelho real) */
+  .moldura-telemovel { background: #0b0b0e; box-shadow: 0 40px 90px rgba(0,0,0,.45); }
+  .moldura-browser { background: #e9ebef; box-shadow: 0 40px 90px rgba(0,0,0,.35); }
+  .barra-browser { position: absolute; left: 0; right: 0; top: 0; display: flex; align-items: center; gap: 1.2%;
+                   padding: 0 3%; box-sizing: border-box; color: #5b616d; font: 500 22px system-ui, sans-serif; }
+  .barra-browser i { width: 1.6%; aspect-ratio: 1; border-radius: 50%; background: #c7cad1; display: block; }
+  .barra-browser span { margin-left: 3%; flex: 1; background: #fff; border-radius: 999px; padding: .35em 1em;
+                        white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cartao { display: flex; flex-direction: column; gap: 14px; }
+  .cartao img { width: 100%; border-radius: inherit; display: block; }
+  .toque .ponto { position: absolute; left: -32px; top: -32px; width: 64px; height: 64px; border-radius: 50%;
+                  background: rgba(255,255,255,.85); box-shadow: 0 6px 24px rgba(0,0,0,.35); }
+  .toque .onda { position: absolute; left: -40px; top: -40px; width: 80px; height: 80px; border-radius: 50%;
+                 border: 6px solid rgba(255,255,255,.9); box-sizing: border-box; }
+  #legenda { position: absolute; left: 0; right: 0; display: flex; justify-content: center; pointer-events: none; }
+  #legenda span { max-width: 84%; text-align: center; padding: .28em .6em; border-radius: .35em;
+                  background: rgba(0,0,0,.62); color: #fff; font-weight: 700; line-height: 1.25; white-space: pre-line; }
+  .guia { position: absolute; background: rgba(255, 40, 60, .22); outline: 2px dashed rgba(255, 40, 60, .8); }
+  .guia-seguro { position: absolute; outline: 3px solid rgba(60, 220, 120, .9); }
+</style>
+</head>
+<body>
+<div id="janela"><div id="palco"></div></div>
+<script>
+/* =====================================================================================
+   EDITA AQUI — tudo vem do plano.md. Tempos em segundos (absolutos), posições em px do
+   formato ou em "%" ("50%" da largura para x/w, da altura para y/h). "*" = qualquer formato.
+   ===================================================================================== */
+const COMPOSICAO = {
+  titulo: "O teu produto",
+  fps: 30,
+  duracao: 12,            // 6 compassos a 120 BPM
+  bpm: 120,
+  cores: { fundo: "#0F1115", texto: "#F5F5F7", destaque: "#FF6B4A", suave: "#9AA0AA", cartao: "#1B1E26", claro: "#FFF4DC" },
+  fontes: {
+    titulos: "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
+    corpo: "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+  },
+  formatos: { "9x16": [1080, 1920], "1x1": [1080, 1080], "16x9": [1920, 1080], "4x5": [1080, 1350] },
+
+  cenas: [
+    { id: "gancho", inicio: 0, fim: 2, fundo: "fundo", elementos: [
+      { tipo: "texto", em: 0.15, entrada: "escreve", durEntrada: 0.9, saida: "sobe",
+        texto: { pt: "O gancho vai aqui.", en: "Your hook goes here." },
+        estilo: { tamanho: 118, peso: 800, fonte: "titulos" },
+        pos: { "9x16": { x: "50%", y: "44%", w: 900 }, "1x1": { x: "50%", y: "46%", w: 920, tamanho: 104 },
+               "16x9": { x: "50%", y: "46%", w: 1500, tamanho: 120 }, "*": { x: "50%", y: "45%", w: "85%" } } },
+      { tipo: "texto", em: 0.9, entrada: "aparece", saida: "aparece",
+        texto: { pt: "uma frase concreta, real, deste projeto", en: "one concrete, true line from this project" },
+        estilo: { tamanho: 44, peso: 500, cor: "suave" },
+        pos: { "9x16": { x: "50%", y: "53%", w: 860 }, "16x9": { x: "50%", y: "58%", w: 1400 }, "*": { x: "50%", y: "57%", w: "85%" } } }
+    ]},
+
+    { id: "revelacao", inicio: 2, fim: 4.5, fundo: "destaque", elementos: [
+      { tipo: "texto", em: 2.1, entrada: "pop", saida: "zoom", durEntrada: 0.45,
+        texto: "O teu produto", estilo: { tamanho: 150, peso: 900, cor: "#FFFFFF", fonte: "titulos" },
+        pos: { "9x16": { x: "50%", y: "45%", w: 960 }, "16x9": { x: "50%", y: "44%", w: 1600, tamanho: 170 }, "*": { x: "50%", y: "45%", w: "90%" } } },
+      { tipo: "texto", em: 2.6, entrada: "sobe", saida: "aparece",
+        texto: { pt: "faz uma coisa útil em 3 toques", en: "does one useful thing in 3 taps" },
+        estilo: { tamanho: 56, peso: 600, cor: "#FFFFFF" },
+        pos: { "9x16": { x: "50%", y: "54%", w: 900 }, "16x9": { x: "50%", y: "58%", w: 1400 }, "*": { x: "50%", y: "57%", w: "88%" } } }
+    ]},
+
+    { id: "produto", inicio: 4.5, fim: 8.5, fundo: "fundo", elementos: [
+      { tipo: "imagem", em: 4.5, entrada: "sobe", durEntrada: 0.5, saida: "desce",
+        src: "../capturas/01-inicio-9x16.png", moldura: "telemovel", camara: { de: 1.0, para: 1.05 },
+        pos: { "9x16": { x: "50%", y: "50%", w: 600, h: 1220 }, "1x1": { x: "34%", y: "53%", w: 400, h: 820 },
+               "16x9": { x: "33%", y: "52%", w: 420, h: 860 }, "*": { x: "50%", y: "56%", w: "52%", h: "70%" } } },
+      { tipo: "texto", em: 4.7, entrada: "esquerda", saida: "aparece",
+        texto: { pt: "Entrada → ação → resultado", en: "Entry → action → result" },
+        estilo: { tamanho: 64, peso: 800 },
+        pos: { "9x16": { x: "50%", y: "17%", w: 900 }, "1x1": { x: "73%", y: "40%", w: 520, tamanho: 54, alinhar: "left" },
+               "16x9": { x: "67%", y: "40%", w: 900, tamanho: 76, alinhar: "left" }, "*": { x: "50%", y: "12%", w: "88%" } } },
+      { tipo: "toque", em: 5.4, ate: 6.6, durSaida: 0.2,
+        caminho: { "9x16": [ { t: 5.4, x: 760, y: 1400 }, { t: 5.9, x: 540, y: 1150, toque: true } ],
+                   "1x1":  [ { t: 5.4, x: 470, y: 830 }, { t: 5.9, x: 367, y: 730, toque: true } ],
+                   "16x9": [ { t: 5.4, x: 780, y: 860 }, { t: 5.9, x: 634, y: 760, toque: true } ],
+                   "*":    [ { t: 5.4, x: "70%", y: "80%" }, { t: 5.9, x: "50%", y: "72%", toque: true } ] } },
+      { tipo: "cartao", em: 6.1, entrada: "pop", saida: "aparece",
+        titulo: { pt: "Cada um paga", en: "Each person pays" }, contador: { de: 0, para: 21.15, casas: 2, prefixo: { pt: "", en: "€" }, sufixo: { pt: " €", en: "" } },
+        estilo: { fundo: "claro", cor: "#16181D", raio: 36, padding: 36, tamanho: 40, tamanhoValor: 96 },
+        pos: { "9x16": { x: "50%", y: "61%", w: 640 }, "1x1": { x: "73%", y: "64%", w: 460, tamanhoValor: 80 },
+               "16x9": { x: "67%", y: "64%", w: 560 }, "*": { x: "50%", y: "84%", w: "60%" } } }
+    ]},
+
+    { id: "remate", inicio: 8.5, fim: 12, fundo: "fundo", elementos: [
+      { tipo: "texto", em: 8.6, entrada: "zoom", saida: "nenhuma", durEntrada: 0.4,
+        texto: "O teu produto", estilo: { tamanho: 140, peso: 900, fonte: "titulos" },
+        pos: { "9x16": { x: "50%", y: "44%", w: 960 }, "16x9": { x: "50%", y: "42%", w: 1600, tamanho: 160 }, "*": { x: "50%", y: "43%", w: "90%" } } },
+      { tipo: "texto", em: 9.1, entrada: "sobe", saida: "nenhuma",
+        texto: "oteuproduto.exemplo", estilo: { tamanho: 52, peso: 700, cor: "#16181D", fundo: "destaque", raio: 999, padding: "0.35em 0.9em" },
+        pos: { "9x16": { x: "50%", y: "53%" }, "16x9": { x: "50%", y: "57%" }, "*": { x: "50%", y: "56%" } } }
+    ]}
+  ],
+
+  legendas: [
+    { inicio: 0.2, fim: 1.95, texto: { pt: "O gancho vai aqui.", en: "Your hook goes here." } },
+    { inicio: 2.1, fim: 4.4, texto: { pt: "O teu produto faz uma coisa útil em 3 toques.", en: "Your product does one useful thing in 3 taps." } },
+    { inicio: 4.6, fim: 8.4, texto: { pt: "Entrada, ação, resultado.", en: "Entry, action, result." } },
+    { inicio: 8.6, fim: 11.8, texto: { pt: "oteuproduto.exemplo", en: "oteuproduto.exemplo" } }
+  ]
+};
+
+/* =====================================================================================
+   MOTOR — normalmente não precisas de mexer daqui para baixo.
+   ===================================================================================== */
+(function () {
+  const P = new URLSearchParams(location.search);
+  const C = COMPOSICAO;
+  const FORMATO = C.formatos[P.get("formato")] ? P.get("formato") : "9x16";
+  const LINGUA = P.get("lingua") || "pt";
+  const CAPTURA = P.has("captura");
+  const [W, H] = C.formatos[FORMATO];
+  const janela = document.getElementById("janela");
+  const palco = document.getElementById("palco");
+  document.documentElement.lang = LINGUA;
+  palco.style.width = W + "px";
+  palco.style.height = H + "px";
+  palco.style.fontFamily = C.fontes.corpo;
+  palco.style.color = C.cores.texto;
+  palco.style.background = C.cores.fundo;
+
+  const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+  const E = {
+    out: x => 1 - Math.pow(1 - x, 3),
+    in: x => x * x * x,
+    inout: x => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2),
+    back: x => { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); }
+  };
+  const cor = v => (v && C.cores[v]) || v || C.cores.texto;
+  const txt = v => (v == null ? "" : typeof v === "string" ? v : (v[LINGUA] ?? v.pt ?? v.en ?? Object.values(v)[0]));
+  const dim = (v, total) => (typeof v === "string" && v.trim().endsWith("%") ? parseFloat(v) / 100 * total : Number(v));
+  const avisos = [];
+  function posDe(el) {
+    const p = el.pos || {};
+    if (!p[FORMATO] && !p["*"]) avisos.push(`"${el.id || el.tipo}" sem posição para ${FORMATO}`);
+    return p[FORMATO] || p["*"] || Object.values(p)[0] || { x: "50%", y: "50%" };
+  }
+  function numero(v, casas) {
+    return v.toLocaleString(LINGUA === "pt" ? "pt-PT" : LINGUA, { minimumFractionDigits: casas, maximumFractionDigits: casas });
+  }
+
+  /* ---------- montar o DOM (uma vez) ---------- */
+  const imagens = [];
+  const fundos = C.cenas.map((cena, i) => {
+    const d = document.createElement("div");
+    d.className = "fundo";
+    d.style.background = cor(cena.fundo || "fundo");
+    d.style.zIndex = i;
+    palco.appendChild(d);
+    return { cena, d };
+  });
+  const camada = document.createElement("div");
+  camada.className = "camada";
+  camada.style.zIndex = 100;
+  palco.appendChild(camada);
+
+  const itens = [];
+  C.cenas.forEach(cena => (cena.elementos || []).forEach(el => {
+    const p = el.tipo === "toque" ? {} : posDe(el);
+    const st = Object.assign({}, el.estilo || {}, p);
+    const node = document.createElement("div");
+    node.className = "el " + el.tipo;
+    const w = p.w != null ? dim(p.w, W) : null;
+    const h = p.h != null ? dim(p.h, H) : null;
+    if (w != null) node.style.width = w + "px";
+    if (h != null) node.style.height = h + "px";
+    const item = { el, cena, node, p, st, w, h };
+
+    if (el.tipo === "texto") {
+      node.style.fontSize = (st.tamanho || 64) + "px";
+      node.style.fontWeight = st.peso || 700;
+      node.style.fontFamily = st.fonte ? (C.fontes[st.fonte] || st.fonte) : "";
+      node.style.color = cor(st.cor || "texto");
+      node.style.textAlign = st.alinhar || "center";
+      if (st.maiusculas) node.style.textTransform = "uppercase";
+      if (st.fundo) { node.style.background = cor(st.fundo); node.style.borderRadius = (st.raio ?? 24) + "px";
+                      node.style.padding = st.padding || "0.3em 0.6em"; node.style.whiteSpace = "nowrap"; }
+      if (w == null && !st.fundo) node.style.whiteSpace = "nowrap";
+      item.texto = txt(el.texto);
+      node.textContent = item.texto;
+    } else if (el.tipo === "imagem") {
+      const vidro = document.createElement("div");
+      vidro.className = "vidro";
+      const img = new Image();
+      img.decoding = "sync";
+      img.src = el.src;
+      const falta = document.createElement("div");
+      falta.className = "falta";
+      falta.textContent = "captura em falta\n" + el.src;
+      falta.style.whiteSpace = "pre-line";
+      falta.style.display = "none";
+      vidro.append(img, falta);
+      imagens.push(new Promise(res => {
+        img.onload = () => res();
+        img.onerror = () => { img.style.display = "none"; falta.style.display = "grid"; res(); };
+      }));
+      item.img = img;
+      if (el.moldura === "telemovel") {
+        node.classList.add("moldura-telemovel");
+        const b = Math.round((w || 600) * 0.035);
+        node.style.padding = b + "px";
+        node.style.borderRadius = Math.round((w || 600) * 0.13) + "px";
+        vidro.style.borderRadius = Math.round((w || 600) * 0.1) + "px";
+      } else if (el.moldura === "browser") {
+        node.classList.add("moldura-browser");
+        const barra = Math.round((w || 1200) * 0.05);
+        node.style.paddingTop = barra + "px";
+        node.style.borderRadius = "18px";
+        const bar = document.createElement("div");
+        bar.className = "barra-browser";
+        bar.style.height = barra + "px";
+        bar.innerHTML = "<i></i><i></i><i></i><span></span>";
+        bar.querySelector("span").textContent = txt(el.url) || "";
+        node.appendChild(bar);
+        vidro.style.borderRadius = "0 0 18px 18px";
+      } else {
+        vidro.style.borderRadius = (st.raio ?? 28) + "px";
+      }
+      node.appendChild(vidro);
+    } else if (el.tipo === "cartao") {
+      node.style.background = cor(st.fundo || "cartao");
+      node.style.color = cor(st.cor || "texto");
+      node.style.borderRadius = (st.raio ?? 32) + "px";
+      node.style.padding = (st.padding ?? 32) + "px";
+      node.style.textAlign = st.alinhar || "left";
+      node.style.boxShadow = "0 24px 60px rgba(0,0,0,.28)";
+      if (el.src) { const img = new Image(); img.src = el.src; imagens.push(new Promise(r => { img.onload = r; img.onerror = r; })); node.appendChild(img); }
+      if (el.titulo) { const t = document.createElement("div"); t.textContent = txt(el.titulo);
+                       t.style.fontSize = (st.tamanho || 40) + "px"; t.style.fontWeight = 600; t.style.opacity = 0.75; node.appendChild(t); }
+      if (el.contador || el.valor) { const v = document.createElement("div"); v.style.fontSize = (st.tamanhoValor || 88) + "px";
+                       v.style.fontWeight = 900; v.style.fontVariantNumeric = "tabular-nums"; v.style.fontFamily = C.fontes.titulos;
+                       v.style.lineHeight = 1; v.textContent = txt(el.valor) || ""; node.appendChild(v); item.valor = v; }
+    } else if (el.tipo === "contador") {
+      node.style.fontSize = (st.tamanho || 120) + "px";
+      node.style.fontWeight = st.peso || 900;
+      node.style.color = cor(st.cor || "texto");
+      node.style.fontVariantNumeric = "tabular-nums";
+      node.style.whiteSpace = "nowrap";
+    } else if (el.tipo === "forma") {
+      node.style.background = cor(st.fundo || "destaque");
+      node.style.borderRadius = st.circulo ? "50%" : (st.raio ?? 0) + "px";
+    } else if (el.tipo === "toque") {
+      node.innerHTML = '<div class="onda"></div><div class="ponto"></div>';
+      item.onda = node.firstChild;
+      item.ponto = node.lastChild;
+      const cam = (el.caminho || {});
+      item.caminho = (cam[FORMATO] || cam["*"] || Object.values(cam)[0] || [])
+        .map(k => ({ t: k.t, x: dim(k.x, W), y: dim(k.y, H), toque: !!k.toque }));
+    }
+    camada.appendChild(node);
+    itens.push(item);
+  }));
+
+  /* legendas e guias */
+  const leg = document.createElement("div");
+  leg.id = "legenda";
+  leg.style.zIndex = 200;
+  const legTam = { "9x16": 54, "1x1": 44, "16x9": 44, "4x5": 48 }[FORMATO];
+  const legBase = { "9x16": 470, "1x1": 80, "16x9": 70, "4x5": 120 }[FORMATO];
+  leg.style.bottom = legBase + "px";
+  leg.style.fontSize = legTam + "px";
+  leg.innerHTML = "<span></span>";
+  leg.style.display = P.has("legendas") ? "flex" : "none";
+  palco.appendChild(leg);
+
+  if (P.has("guias")) {
+    const z = {
+      "9x16": { topo: 250, base: 420, dir: 140, esq: 60 },
+      "4x5": { topo: 80, base: 80, dir: 80, esq: 80 },
+      "1x1": { topo: 80, base: 80, dir: 80, esq: 80 },
+      "16x9": { topo: 96, base: 96, dir: 96, esq: 96 }
+    }[FORMATO];
+    const add = (css, cls = "guia") => { const g = document.createElement("div"); g.className = cls; Object.assign(g.style, css); g.style.zIndex = 300; palco.appendChild(g); };
+    add({ left: 0, right: 0, top: 0, height: z.topo + "px" });
+    add({ left: 0, right: 0, bottom: 0, height: z.base + "px" });
+    add({ right: 0, top: z.topo + "px", bottom: z.base + "px", width: z.dir + "px" });
+    add({ left: 0, top: z.topo + "px", bottom: z.base + "px", width: z.esq + "px" });
+    add({ left: z.esq + "px", right: z.dir + "px", top: z.topo + "px", bottom: z.base + "px" }, "guia-seguro");
+  }
+
+  /* ---------- estado de cada elemento em t (função pura) ---------- */
+  function vida(item) {
+    const el = item.el, cena = item.cena;
+    const em = el.em ?? cena.inicio;
+    const dIn = el.durEntrada ?? (el.entrada === "escreve" ? Math.max(0.4, item.texto ? item.texto.length * 0.045 : 0.6) : 0.35);
+    const dOut = el.saida === "nenhuma" ? 0 : (el.durSaida ?? 0.25);
+    const ate = el.ate ?? (cena.fim - dOut);
+    return { em, dIn, dOut, ate };
+  }
+
+  function movimento(tipo, p, saindo) {
+    // p: 0 = fora, 1 = no sítio. Na saída, o movimento continua no mesmo sentido.
+    const d = Math.min(W, H) * 0.05, s = saindo ? -1 : 1;
+    switch (tipo) {
+      case "sobe": return { o: p, tr: `translateY(${s * d * (1 - p)}px)` };
+      case "desce": return { o: p, tr: `translateY(${-s * d * (1 - p)}px)` };
+      case "esquerda": return { o: p, tr: `translateX(${-s * d * 1.6 * (1 - p)}px)` };
+      case "direita": return { o: p, tr: `translateX(${s * d * 1.6 * (1 - p)}px)` };
+      case "zoom": return { o: p, tr: `scale(${saindo ? 1 + 0.12 * (1 - p) : 0.86 + 0.14 * p})` };
+      case "pop": return { o: Math.min(1, p * 3), tr: `scale(${0.6 + 0.4 * p})` };
+      case "nenhuma": return { o: p > 0 ? 1 : 0, tr: "" };
+      default: return { o: p, tr: "" }; // "aparece" e "escreve"
+    }
+  }
+
+  function render(t) {
+    // fundos: o da cena atual entra por cima do anterior em 0,3 s
+    // (as camadas de fundo são opacas e empilhadas: a mais recente tapa as anteriores)
+    fundos.forEach(({ cena, d }, i) => {
+      const dur = cena.fundoTransicao ?? 0.3;
+      d.style.opacity = t < cena.inicio ? 0 : (i === 0 ? 1 : clamp((t - cena.inicio) / dur));
+    });
+
+    for (const item of itens) {
+      const { el, node } = item;
+      const v = vida(item);
+      if (t < v.em || t >= v.ate + v.dOut) { node.style.display = "none"; continue; }
+      node.style.display = el.tipo === "cartao" ? "flex" : "block";
+
+      const pin = v.dIn > 0 ? clamp((t - v.em) / v.dIn) : 1;
+      const pout = v.dOut > 0 ? clamp((v.ate + v.dOut - t) / v.dOut) : 1;
+      const tipoIn = el.entrada || "sobe";
+      const tipoOut = el.saida || "aparece";
+      let m;
+      if (t > v.ate && v.dOut > 0) m = movimento(tipoOut, E.out(pout), true); // sai devagar e acelera
+      else m = movimento(tipoIn, tipoIn === "pop" ? clamp(E.back(pin), 0, 1.08) : E.out(pin), false);
+
+      // posição e âncora
+      const p = item.p;
+      const x = dim(p.x ?? "50%", W), y = dim(p.y ?? "50%", H);
+      const anc = { centro: "-50%,-50%", topo: "-50%,0", base: "-50%,-100%", esquerda: "0,-50%", direita: "-100%,-50%" }[p.ancora || "centro"];
+      if (el.tipo === "toque") {
+        node.style.transform = "";
+      } else {
+        node.style.transform = `translate(${x}px, ${y}px) translate(${anc}) ${m.tr}`;
+      }
+      node.style.opacity = m.o;
+
+      if (el.tipo === "texto" && el.entrada === "escreve") {
+        const n = Math.round(item.texto.length * clamp((t - v.em) / v.dIn));
+        const piscar = n < item.texto.length || Math.floor((t - v.em) * 2.5) % 2 === 0;
+        node.textContent = item.texto.slice(0, n);
+        if (piscar && t < v.ate) { const c = document.createElement("span"); c.className = "cursor"; node.appendChild(c); }
+      }
+      if (el.tipo === "imagem" && item.img && el.camara) {
+        const k = clamp((t - v.em) / Math.max(0.01, v.ate + v.dOut - v.em));
+        const s = el.camara.de + (el.camara.para - el.camara.de) * E.inout(k);
+        item.img.style.transform = `scale(${s})`;
+      }
+      const cont = el.contador;
+      if (cont && (el.tipo === "contador" || item.valor)) {
+        const k = E.out(clamp((t - v.em - (cont.atraso ?? 0.1)) / (cont.dur ?? 0.8)));
+        const val = txt(cont.prefixo) + numero(cont.de + (cont.para - cont.de) * k, cont.casas ?? 0) + txt(cont.sufixo);
+        (item.valor || node).textContent = val;
+      }
+      if (el.tipo === "toque") {
+        const c = item.caminho;
+        if (!c.length) continue;
+        let px = c[0].x, py = c[0].y;
+        for (let i = 0; i < c.length - 1; i++) {
+          if (t >= c[i].t && t <= c[i + 1].t) {
+            const k = E.inout((t - c[i].t) / Math.max(0.01, c[i + 1].t - c[i].t));
+            px = c[i].x + (c[i + 1].x - c[i].x) * k; py = c[i].y + (c[i + 1].y - c[i].y) * k;
+          } else if (t > c[i + 1].t) { px = c[i + 1].x; py = c[i + 1].y; }
+        }
+        node.style.transform = `translate(${px}px, ${py}px)`;
+        let onda = 0, aperto = 1;
+        for (const k of c) if (k.toque && t >= k.t && t < k.t + 0.4) {
+          const q = (t - k.t) / 0.4; onda = q; aperto = 0.82 + 0.18 * E.out(Math.min(1, q * 2.5));
+        }
+        item.ponto.style.transform = `scale(${aperto})`;
+        item.onda.style.opacity = onda ? (1 - onda) * 0.9 : 0;
+        item.onda.style.transform = `scale(${0.6 + 1.8 * E.out(onda)})`;
+      }
+    }
+
+    const cap = (C.legendas || []).find(l => t >= l.inicio && t < l.fim);
+    leg.firstChild.textContent = cap ? txt(cap.texto) : "";
+    leg.firstChild.style.visibility = cap ? "visible" : "hidden";
+  }
+
+  /* ---------- pré-visualização: ajustar à janela ---------- */
+  function ajustar() {
+    if (CAPTURA) { janela.style.width = W + "px"; janela.style.height = H + "px"; palco.style.transform = ""; return; }
+    document.body.classList.add("preview");
+    const s = Math.min(innerWidth / W, innerHeight / H) * 0.96;
+    janela.style.width = W * s + "px";
+    janela.style.height = H * s + "px";
+    palco.style.transform = `scale(${s})`;
+  }
+  addEventListener("resize", ajustar);
+  ajustar();
+
+  /* ---------- API ---------- */
+  const proximoFotograma = () => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+  window.pronto = Promise.all([document.fonts ? document.fonts.ready : null, ...imagens]).then(() => {
+    if (avisos.length) console.warn("launch-studio:", [...new Set(avisos)].join("; "));
+    return true;
+  });
+  window.duracao = () => C.duracao;
+  window.fps = () => C.fps;
+  window.seek = async t => { await window.pronto; render(t); if (document.fonts) await document.fonts.ready; await proximoFotograma(); return t; };
+
+  const t0 = parseFloat(P.get("t"));
+  if (P.has("play")) {
+    window.pronto.then(() => {
+      const inicio = performance.now();
+      const loop = now => { render(((now - inicio) / 1000) % C.duracao); requestAnimationFrame(loop); };
+      requestAnimationFrame(loop);
+    });
+  } else {
+    render(isNaN(t0) ? 0 : t0);
+    window.pronto.then(() => render(isNaN(t0) ? 0 : t0));
+  }
+})();
+</script>
+</body>
+</html>

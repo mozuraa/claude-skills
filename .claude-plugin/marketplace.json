@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Biblioteca de Claude Skills de mozuraa · mozuraa's Claude Skills library",
-    "version": "3.1.0"
+    "version": "3.2.0"
   },
   "plugins": [
     {
@@ -76,6 +76,24 @@
         "chatgpt",
         "midjourney",
         "agents"
+      ]
+    },
+    {
+      "name": "lancamento",
+      "source": "./lancamento",
+      "description": "Mostrar o que criaste: vídeo de lançamento a partir do projeto, kit para anunciar em todas as plataformas e novidades de cada versão · Launch videos, launch kits and release announcements from your project.",
+      "version": "1.0.0",
+      "author": {
+        "name": "mozuraa"
+      },
+      "category": "productivity",
+      "keywords": [
+        "launch-video",
+        "product-launch",
+        "product-hunt",
+        "show-hn",
+        "release-notes",
+        "social-media"
       ]
     }
   ]

@@ -1,0 +1,20 @@
+{
+  "name": "lancamento",
+  "version": "1.0.0",
+  "description": "Mostrar o que criaste: vídeo de lançamento a partir do projeto, kit para anunciar em todas as plataformas e novidades de cada versão · Launch videos, launch kits and release announcements from your project.",
+  "author": {
+    "name": "mozuraa",
+    "url": "https://github.com/mozuraa"
+  },
+  "homepage": "https://github.com/mozuraa/claude-skills/tree/main/lancamento",
+  "repository": "https://github.com/mozuraa/claude-skills",
+  "license": "MIT",
+  "keywords": [
+    "launch-video",
+    "product-launch",
+    "product-hunt",
+    "show-hn",
+    "release-notes",
+    "social-media"
+  ]
+}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<title>Imagem de partilha · launch-studio</title>
+<!--
+  launch-studio · modelo de imagem de partilha
+  Copia para launch-output/work/, edita as variáveis e os textos, e captura com o browser sem janela:
+
+    "$CHROME" --headless=new --hide-scrollbars --window-size=1200,630 --virtual-time-budget=2000 \
+      --screenshot=launch-output/kit/og-image.png "file:///…/work/og-image.html"
+
+  Formatos (?formato=…):  og 1200×630 (por defeito) · miniatura 1280×720 · github 1280×640
+                          ph 1270×760 (galeria do Product Hunt) · play 1024×500 (Google Play)
+  Usa a --window-size igual ao formato. &guias=1 mostra a margem segura.
+-->
+<style>
+  /* Fontes do projeto: declara-as aqui com ficheiros locais (nada de URLs externos). */
+  :root {
+    --fundo: #0F1115;
+    --texto: #F5F5F7;
+    --suave: #A3A9B4;
+    --destaque: #FF6B4A;
+    --fonte-titulos: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --fonte-corpo: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --w: 1200px; --h: 630px;
+  }
+  html, body { margin: 0; background: var(--fundo); }
+  .quadro { position: relative; width: var(--w); height: var(--h); overflow: hidden; box-sizing: border-box;
+          display: grid; grid-template-columns: 1.15fr 0.85fr; align-items: center; gap: 4%;
+          padding: 0 6%; background: radial-gradient(120% 120% at 100% 0%, color-mix(in srgb, var(--destaque) 26%, var(--fundo)) 0%, var(--fundo) 58%);
+          color: var(--texto); font-family: var(--fonte-corpo); -webkit-font-smoothing: antialiased; }
+  .marca { display: flex; align-items: center; gap: 18px; font: 700 30px/1 var(--fonte-titulos); color: var(--suave); }
+  .marca img { width: 64px; height: 64px; border-radius: 16px; }
+  h1 { margin: 26px 0 0; font: 900 76px/1.02 var(--fonte-titulos); letter-spacing: -0.02em; }
+  h1 em { font-style: normal; color: var(--destaque); }
+  p { margin: 22px 0 0; font: 500 30px/1.3 var(--fonte-corpo); color: var(--suave); max-width: 92%; }
+  .url { display: inline-block; margin-top: 30px; padding: 12px 24px; border-radius: 999px;
+         background: var(--destaque); color: #15171C; font: 800 26px/1 var(--fonte-corpo); }
+  .produto { justify-self: center; height: 80%; aspect-ratio: 9 / 19.5; border-radius: 44px; padding: 12px;
+             background: #0b0b0e; box-shadow: 0 30px 80px rgba(0,0,0,.45); transform: rotate(4deg); }
+  .produto img { width: 100%; height: 100%; object-fit: cover; border-radius: 34px; display: block; background: #23262d; }
+  body.largo .produto { aspect-ratio: 16 / 10; height: auto; width: 100%; border-radius: 18px; padding: 0; transform: none; }
+  body.largo .produto img { border-radius: 18px; }
+  .guia { position: absolute; inset: 6%; outline: 3px dashed rgba(60, 220, 120, .9); pointer-events: none; }
+</style>
+</head>
+<body>
+  <div class="quadro" id="quadro">
+    <div>
+      <div class="marca"><img src="../capturas/icone.png" alt="">O teu produto</div>
+      <h1>Uma frase curta que diz <em>o que faz</em></h1>
+      <p>Para quem é e o que muda — numa linha, com as palavras do projeto.</p>
+      <span class="url">oteuproduto.exemplo</span>
+    </div>
+    <!-- Captura real do produto. Para sites, usa uma captura horizontal e acrescenta ?largo=1 ao URL. -->
+    <div class="produto"><img src="../capturas/01-inicio-9x16.png" alt=""></div>
+  </div>
+<script>
+  const P = new URLSearchParams(location.search);
+  const F = { og: [1200, 630], miniatura: [1280, 720], github: [1280, 640], ph: [1270, 760], play: [1024, 500] }[P.get("formato") || "og"] || [1200, 630];
+  document.documentElement.style.setProperty("--w", F[0] + "px");
+  document.documentElement.style.setProperty("--h", F[1] + "px");
+  if (P.has("largo")) document.body.classList.add("largo");
+  if (P.has("guias")) { const g = document.createElement("div"); g.className = "guia"; document.getElementById("quadro").appendChild(g); }
+  // imagens em falta não deixam ícones partidos
+  document.querySelectorAll("img").forEach(i => i.addEventListener("error", () => { i.style.visibility = "hidden"; }));
+</script>
+</body>
+</html>
