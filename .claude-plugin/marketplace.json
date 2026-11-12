@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Biblioteca de Claude Skills de mozuraa · mozuraa's Claude Skills library",
-    "version": "3.0.0"
+    "version": "3.1.0"
   },
   "plugins": [
     {
@@ -58,6 +58,24 @@
         "beginners",
         "learn-to-code",
         "eli5"
+      ]
+    },
+    {
+      "name": "ia",
+      "source": "./ia",
+      "description": "Trabalhar melhor com IA: cria e melhora prompts para qualquer modelo, percebendo primeiro o objetivo, a lógica e o raciocínio · Work better with AI: create and improve prompts for any model.",
+      "version": "1.0.0",
+      "author": {
+        "name": "mozuraa"
+      },
+      "category": "productivity",
+      "keywords": [
+        "prompt-engineering",
+        "prompts",
+        "system-prompt",
+        "chatgpt",
+        "midjourney",
+        "agents"
       ]
     }
   ]

@@ -1,0 +1,20 @@
+{
+  "name": "ia",
+  "version": "1.0.0",
+  "description": "Trabalhar melhor com IA: cria e melhora prompts para qualquer modelo, percebendo primeiro o objetivo, a lógica e o raciocínio · Work better with AI: create and improve prompts for any model.",
+  "author": {
+    "name": "mozuraa",
+    "url": "https://github.com/mozuraa"
+  },
+  "homepage": "https://github.com/mozuraa/claude-skills/tree/main/ia",
+  "repository": "https://github.com/mozuraa/claude-skills",
+  "license": "MIT",
+  "keywords": [
+    "prompt-engineering",
+    "prompts",
+    "system-prompt",
+    "chatgpt",
+    "midjourney",
+    "agents"
+  ]
+}

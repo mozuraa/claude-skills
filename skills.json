@@ -1,11 +1,12 @@
 {
   "author": "mozuraa",
-  "updated": "2026-11-11",
+  "updated": "2026-11-12",
   "marketplace": "mozuraa-skills",
   "categories": {
     "ideias": "💡 Ideias / Ideas",
     "estudios": "🏗️ Estúdios / Studios",
-    "programacao": "🧑‍💻 Programação / Programming"
+    "programacao": "🧑‍💻 Programação / Programming",
+    "ia": "🤖 IA / AI"
   },
   "skills": [
     {
@@ -76,6 +77,18 @@
       "description_en": "Explains code, errors and programming to total beginners, no jargon.",
       "license": "MIT",
       "icon": "https://raw.githubusercontent.com/mozuraa/claude-skill-code-for-noobs/main/icon.svg"
+    },
+    {
+      "name": "prompt-studio",
+      "category": "ia",
+      "plugin": "ia@mozuraa-skills",
+      "version": "1.0.0",
+      "repo": "https://github.com/mozuraa/claude-skill-prompt-studio",
+      "path": "ia/skills/prompt-studio",
+      "description_pt": "Cria e melhora prompts para qualquer IA: 🛠️ criar e ✏️ editar, percebendo primeiro o objetivo, a lógica e o raciocínio.",
+      "description_en": "Creates and improves prompts for any AI: create and edit, understanding the goal, logic and reasoning first.",
+      "license": "MIT",
+      "icon": "https://raw.githubusercontent.com/mozuraa/claude-skill-prompt-studio/main/icon.svg"
     }
   ]
 }

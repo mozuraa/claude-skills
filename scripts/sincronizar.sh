@@ -19,6 +19,7 @@ ideias brainstorming
 estudios website-studio
 estudios app-studio
 programacao code-for-noobs
+ia prompt-studio
 "
 
 echo "$SKILLS" | while read -r categoria nome; do
