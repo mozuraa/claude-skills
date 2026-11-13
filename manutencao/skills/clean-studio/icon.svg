@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Clean studio: uma vassoura a varrer pastas e ficheiros, com brilhos">
+  <defs>
+    <filter id="wobble" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="5" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <g filter="url(#wobble)" stroke="#2B2B2B" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="12" y="12" width="232" height="232" rx="52" fill="#E3F6EC" stroke-width="5"/>
+
+    <!-- brilhos -->
+    <path d="M60 40 L63 50 L73 53 L63 56 L60 66 L57 56 L47 53 L57 50 Z" fill="#FFD43B" stroke-width="3.5"/>
+    <path d="M110 66 L112 72 L118 74 L112 76 L110 82 L108 76 L102 74 L108 72 Z" fill="#FFFFFF" stroke-width="3"/>
+    <circle cx="40" cy="104" r="4.5" fill="none" stroke-width="3.5"/>
+
+    <!-- pasta arrumada -->
+    <path d="M140 48 L164 48 L172 58 L214 58 Q222 58 222 66 L222 112 Q222 120 214 120 L148 120 Q140 120 140 112 Z" fill="#7CC4FF" stroke-width="6"/>
+    <path d="M140 70 L222 70" fill="none" stroke-width="4"/>
+    <path d="M168 94 L178 104 L198 82" fill="none" stroke="#1E9E5A" stroke-width="7"/>
+
+    <!-- vassoura -->
+    <path d="M78 98 L150 170" fill="none" stroke="#A86B3C" stroke-width="10"/>
+    <path d="M78 98 L150 170" fill="none" stroke-width="3"/>
+    <path d="M136 156 L168 188 L150 216 Q120 214 104 196 Q92 182 96 158 Z" fill="#FFB84D" stroke-width="6"/>
+    <path d="M140 172 L114 200 M152 182 L130 210 M128 162 L104 184" fill="none" stroke-width="3.5"/>
+    <path d="M132 152 L172 192" fill="none" stroke="#FF6B4A" stroke-width="7"/>
+
+    <!-- pó a ser varrido -->
+    <circle cx="66" cy="204" r="6" fill="#C9CDD6" stroke-width="3.5"/>
+    <circle cx="48" cy="186" r="4" fill="#C9CDD6" stroke-width="3"/>
+    <path d="M44 214 Q52 206 60 214" fill="none" stroke="#3D7BFF" stroke-width="3.5"/>
+  </g>
+</svg>

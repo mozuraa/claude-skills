@@ -1,13 +1,14 @@
 {
   "author": "mozuraa",
-  "updated": "2026-11-12",
+  "updated": "2026-11-13",
   "marketplace": "mozuraa-skills",
   "categories": {
     "ideias": "💡 Ideias / Ideas",
     "estudios": "🏗️ Estúdios / Studios",
     "programacao": "🧑‍💻 Programação / Programming",
     "ia": "🤖 IA / AI",
-    "lancamento": "📣 Lançamento / Launch"
+    "lancamento": "📣 Lançamento / Launch",
+    "manutencao": "🧹 Manutenção / Maintenance"
   },
   "skills": [
     {
@@ -102,6 +103,18 @@
       "description_en": "Launch studio: a 15–30 s launch video from your project, a launch kit for every platform, and what's-new announcements. Inspired by /brag.",
       "license": "MIT",
       "icon": "https://raw.githubusercontent.com/mozuraa/claude-skill-launch-studio/main/icon.svg"
+    },
+    {
+      "name": "clean-studio",
+      "category": "manutencao",
+      "plugin": "manutencao@mozuraa-skills",
+      "version": "1.0.0",
+      "repo": "https://github.com/mozuraa/claude-skill-clean-studio",
+      "path": "manutencao/skills/clean-studio",
+      "description_pt": "Organiza e limpa repos do GitHub e o computador (Mac e Windows): analisa, mostra o plano e só age com confirmação.",
+      "description_en": "Organizes and cleans GitHub repos and computers (Mac and Windows): analyses, shows a plan, acts only after confirmation.",
+      "license": "MIT",
+      "icon": "https://raw.githubusercontent.com/mozuraa/claude-skill-clean-studio/main/icon.svg"
     }
   ]
 }

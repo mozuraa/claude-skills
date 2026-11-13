@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Biblioteca de Claude Skills de mozuraa · mozuraa's Claude Skills library",
-    "version": "3.2.0"
+    "version": "3.3.0"
   },
   "plugins": [
     {
@@ -94,6 +94,23 @@
         "show-hn",
         "release-notes",
         "social-media"
+      ]
+    },
+    {
+      "name": "manutencao",
+      "source": "./manutencao",
+      "description": "Manter tudo em ordem: organiza e limpa os repositórios do GitHub e o computador (Mac e Windows), sempre com relatório, plano e confirmação · Keep things tidy: safely clean up GitHub repos and computers.",
+      "version": "1.0.0",
+      "author": {
+        "name": "mozuraa"
+      },
+      "category": "productivity",
+      "keywords": [
+        "cleanup",
+        "disk-space",
+        "github-cli",
+        "repository-management",
+        "secrets-detection"
       ]
     }
   ]

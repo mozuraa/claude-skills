@@ -1,8 +1,8 @@
 # Claude Skills — biblioteca de mozuraa
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-![Skills](https://img.shields.io/badge/skills-8-D97757)
-![Categorias](https://img.shields.io/badge/categorias-5-2EAD6B)
+![Skills](https://img.shields.io/badge/skills-9-D97757)
+![Categorias](https://img.shields.io/badge/categorias-6-2EAD6B)
 ![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin%20marketplace-8A63D2)
 
 **[Português](#português) · [English](#english)**
@@ -22,6 +22,7 @@ Todas as [skills](#o-que-é-uma-skill) para o **Claude** que criei, organizadas 
 | 🧑‍💻 | **[Programação](programacao/)** | `code-for-noobs` |
 | 🤖 | **[IA](ia/)**: prompts | `prompt-studio` |
 | 📣 | **[Lançamento](lancamento/)**: vídeo, kit e novidades | `launch-studio` |
+| 🧹 | **[Manutenção](manutencao/)**: GitHub e computador | `clean-studio` |
 
 ### Que skill uso?
 
@@ -42,6 +43,8 @@ Todas as [skills](#o-que-é-uma-skill) para o **Claude** que criei, organizadas 
 | um **vídeo de lançamento** do que criei (site, app, jogo) | [`launch-studio`](lancamento/skills/launch-studio/SKILL.md) | 🎬 Vídeo |
 | **anunciar** o meu projeto: posts, Product Hunt, Show HN, imagem OG, GIF | [`launch-studio`](lancamento/skills/launch-studio/SKILL.md) | 📣 Kit |
 | mostrar o que há de **novo** numa versão | [`launch-studio`](lancamento/skills/launch-studio/SKILL.md) | 🔄 Novidades |
+| **arrumar os meus repos** no GitHub (parados, descrições, branches, segredos expostos) | [`clean-studio`](manutencao/skills/clean-studio/SKILL.md) | 🐙 GitHub |
+| **libertar espaço** ou arrumar pastas no Mac/PC | [`clean-studio`](manutencao/skills/clean-studio/SKILL.md) | 💻 Computador |
 
 Não precisas de escolher: com as skills instaladas, o Claude usa a certa (e o modo certo) sozinho quando o pedido encaixa.
 
@@ -82,6 +85,12 @@ Cada estúdio tem três modos que se encadeiam: **💡 Idear → 🛠️ Criar �
 |---|---|---|---|
 | <img src="lancamento/skills/launch-studio/icon.svg" width="32" alt=""> | [**launch-studio**](https://github.com/mozuraa/claude-skill-launch-studio) | **Fizeste uma coisa? Mostra-a.** Inspirado no [/brag](https://github.com/latent-spaces/brag), com tudo o que ele faz e mais.<br>🎬 Vídeo de lançamento de 15–30 s em 9:16, 1:1 e 16:9, com capturas reais, 11 tons, música original ou licenciada, legendas e voz opcional.<br>📣 Kit: textos para X, LinkedIn, Instagram, TikTok, Product Hunt, Show HN e Reddit, imagem OG, GIF, pré-visualização da App Store, checklist e calendário.<br>🔄 Novidades: vídeo e posts do que mudou numa versão. | 1.0.0 |
 
+#### 🧹 Manutenção
+
+| | Skill | O que faz | Versão |
+|---|---|---|---|
+| <img src="manutencao/skills/clean-studio/icon.svg" width="32" alt=""> | [**clean-studio**](https://github.com/mozuraa/claude-skill-clean-studio) | **Arruma e limpa sem perder nada.** Analisa, mostra relatório e plano, e só age com a tua confirmação (reversível primeiro).<br>🐙 GitHub: inventário, arquivar parados, descrições e tópicos, branches fundidos, forks sem alterações, alerta de segredos expostos.<br>💻 Computador (Mac e Windows): o que ocupa espaço, caches e `node_modules`, clones já no GitHub, duplicados, Downloads e estrutura de pastas. | 1.0.0 |
+
 A lista também existe em formato de dados em [`skills.json`](skills.json).
 
 ### Instalar
@@ -100,6 +109,7 @@ E depois instala as categorias que quiseres:
 /plugin install programacao@mozuraa-skills
 /plugin install ia@mozuraa-skills
 /plugin install lancamento@mozuraa-skills
+/plugin install manutencao@mozuraa-skills
 ```
 
 As atualizações chegam com `/plugin marketplace update mozuraa-skills`. Instaladas assim, as skills aparecem com o nome da categoria à frente (ex.: `/estudios:website-studio`).
@@ -113,13 +123,13 @@ git clone https://github.com/mozuraa/claude-skill-NOME.git ~/.claude/skills/NOME
 Todas de uma vez:
 
 ```bash
-for s in website-studio app-studio ideias-funcionalidades ideias-monetizacao brainstorming code-for-noobs prompt-studio launch-studio; do git clone https://github.com/mozuraa/claude-skill-$s.git ~/.claude/skills/$s; done
+for s in website-studio app-studio ideias-funcionalidades ideias-monetizacao brainstorming code-for-noobs prompt-studio launch-studio clean-studio; do git clone https://github.com/mozuraa/claude-skill-$s.git ~/.claude/skills/$s; done
 ```
 
 Atualizar todas:
 
 ```bash
-for s in website-studio app-studio ideias-funcionalidades ideias-monetizacao brainstorming code-for-noobs prompt-studio launch-studio; do git -C ~/.claude/skills/$s pull; done
+for s in website-studio app-studio ideias-funcionalidades ideias-monetizacao brainstorming code-for-noobs prompt-studio launch-studio clean-studio; do git -C ~/.claude/skills/$s pull; done
 ```
 
 **3. App Claude / claude.ai.** Abre o repositório da skill, carrega em **Code → Download ZIP** e carrega o ZIP nas **Definições**, na secção **Skills** (em *Capacidades*).
@@ -147,6 +157,8 @@ claude-skills/
 │   └── skills/prompt-studio/         # SKILL.md · references/ · assets/modelos
 ├── lancamento/                       # 📣 plugin "lancamento"
 │   └── skills/launch-studio/         # SKILL.md · references/{video,kit,novidades} · assets/
+├── manutencao/                       # 🧹 plugin "manutencao"
+│   └── skills/clean-studio/          # SKILL.md · references/ (github, mac, windows...)
 ├── skills.json                       # a lista em formato de dados
 └── scripts/sincronizar.sh            # copia as skills dos repositórios individuais para aqui
 ```
@@ -191,6 +203,7 @@ All the [skills](#what-is-a-skill) for **Claude** that I've created, organized b
 | 🧑‍💻 | **[Programming](programacao/)** (`programacao`) | `code-for-noobs` |
 | 🤖 | **[AI](ia/)** (`ia`): prompts | `prompt-studio` |
 | 📣 | **[Launch](lancamento/)** (`lancamento`): video, kit and what's new | `launch-studio` |
+| 🧹 | **[Maintenance](manutencao/)** (`manutencao`): GitHub and computer | `clean-studio` |
 
 ### Which skill do I need?
 
@@ -211,6 +224,8 @@ All the [skills](#what-is-a-skill) for **Claude** that I've created, organized b
 | a **launch video** of something I built (site, app, game) | `launch-studio` | 🎬 Video |
 | to **announce** my project: posts, Product Hunt, Show HN, OG image, GIF | `launch-studio` | 📣 Kit |
 | to show what's **new** in a release | `launch-studio` | 🔄 What's new |
+| to **tidy my GitHub repos** (stale, descriptions, branches, leaked secrets) | `clean-studio` | 🐙 GitHub |
+| to **free up space** or tidy folders on my Mac/PC | `clean-studio` | 💻 Computer |
 
 You don't have to choose: once installed, Claude picks the right skill (and mode) on its own.
 
@@ -226,6 +241,7 @@ You don't have to choose: once installed, Claude picks the right skill (and mode
 | 🧑‍💻 | [**code-for-noobs**](https://github.com/mozuraa/claude-skill-code-for-noobs) | Explains **code, errors and programming to people who have never coded**. |
 | 🤖 | [**prompt-studio**](https://github.com/mozuraa/claude-skill-prompt-studio) | **Prompts for any AI:** first works out the goal, logic and reasoning, then writes the best possible prompt. Create new prompts, or edit existing ones with a before/after score. |
 | 📣 | [**launch-studio**](https://github.com/mozuraa/claude-skill-launch-studio) | **You built it, now show it.** Inspired by [/brag](https://github.com/latent-spaces/brag), with everything it does and more: a 15–30 s launch video in 9:16, 1:1 and 16:9 from real captures, a full launch kit (per-platform posts, OG image, GIF, App Store preview, checklist) and "what's new" videos for each release. |
+| 🧹 | [**clean-studio**](https://github.com/mozuraa/claude-skill-clean-studio) | **Tidy up without losing anything:** GitHub repo inventory, archiving, merged branches, unchanged forks and leaked-secret alerts; disk space, caches, duplicates and folders on Mac and Windows. Always analyse → plan → you confirm → act. |
 
 ### Install
 
@@ -238,6 +254,7 @@ You don't have to choose: once installed, Claude picks the right skill (and mode
 /plugin install programacao@mozuraa-skills
 /plugin install ia@mozuraa-skills
 /plugin install lancamento@mozuraa-skills
+/plugin install manutencao@mozuraa-skills
 ```
 
 Update with `/plugin marketplace update mozuraa-skills`. Installed this way, skills are prefixed with their category (e.g. `/estudios:website-studio`).
@@ -245,7 +262,7 @@ Update with `/plugin marketplace update mozuraa-skills`. Installed this way, ski
 **2. Claude Code, standalone skills:**
 
 ```bash
-for s in website-studio app-studio ideias-funcionalidades ideias-monetizacao brainstorming code-for-noobs prompt-studio launch-studio; do git clone https://github.com/mozuraa/claude-skill-$s.git ~/.claude/skills/$s; done
+for s in website-studio app-studio ideias-funcionalidades ideias-monetizacao brainstorming code-for-noobs prompt-studio launch-studio clean-studio; do git clone https://github.com/mozuraa/claude-skill-$s.git ~/.claude/skills/$s; done
 ```
 
 **3. Claude app / claude.ai:** open the skill's repository, click **Code → Download ZIP** and upload it in **Settings**, under **Skills** (in *Capabilities*).

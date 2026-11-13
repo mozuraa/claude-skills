@@ -1,0 +1,10 @@
+{
+  "name": "manutencao",
+  "version": "1.0.0",
+  "description": "Manter tudo em ordem: organiza e limpa os repositórios do GitHub e o computador (Mac e Windows), sempre com relatório, plano e confirmação · Keep things tidy: safely clean up GitHub repos and computers.",
+  "author": { "name": "mozuraa", "url": "https://github.com/mozuraa" },
+  "homepage": "https://github.com/mozuraa/claude-skills/tree/main/manutencao",
+  "repository": "https://github.com/mozuraa/claude-skills",
+  "license": "MIT",
+  "keywords": ["cleanup", "disk-space", "github-cli", "repository-management", "secrets-detection"]
+}
