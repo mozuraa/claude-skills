@@ -105,7 +105,7 @@ Skills for better-looking, easier-to-use interfaces. Each one credits its source
 | | [**depth-backgrounds**](design/skills/depth-backgrounds/SKILL.md) | 22 backgrounds for less flat designs (grain, fluted glass, blueprint, paper, ASCII...), with CSS/SVG recipes. | [@charles.unemployed](https://www.instagram.com/reel/DffEWqKhKWo/) |
 | | [**graphic-design-styles**](design/skills/graphic-design-styles/SKILL.md) | 20 graphic design styles (minimalism, Y2K, Swiss, cyberpunk...) with colors, fonts, uses and ready-made image prompts. | [@gobirdmasterclass](https://www.instagram.com/reel/Dcl9lNHuG5c/) |
 
-These skills live only in this library (they don't have their own repositories).
+These skills are copied from the **design-studio** repository (private for now, still being organized).
 
 The list is also available as data in [`skills.json`](skills.json).
 
@@ -178,7 +178,7 @@ claude-skills/
 │   └── skills/creator-studio/         # SKILL.md · references/{video,kit,novidades} · assets/
 ├── manutencao/                       # 🧹 "manutencao" plugin
 │   └── skills/clean-studio/          # SKILL.md · references/ (github, mac, windows...)
-├── design/                           # 🎨 "design" plugin (skills kept only here)
+├── design/                           # 🎨 "design" plugin (copied from design-studio)
 │   └── skills/{ui-motion-ux,design-vocabulary,depth-backgrounds,graphic-design-styles}/
 ├── skills.json                       # the list as data
 └── scripts/sincronizar.sh            # copies the skills here from their own repositories
