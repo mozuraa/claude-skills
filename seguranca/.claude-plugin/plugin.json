@@ -1,0 +1,10 @@
+{
+  "name": "seguranca",
+  "version": "1.0.0",
+  "description": "Segurança de apps: auditoria defensiva do teu código contra 20 ataques reais e públicos, com correções · App security: defensive audit of your code against 20 real, public attacks, with fixes.",
+  "author": { "name": "mozuraa", "url": "https://github.com/mozuraa" },
+  "homepage": "https://github.com/mozuraa/claude-skills/tree/main/seguranca",
+  "repository": "https://github.com/mozuraa/claude-skills",
+  "license": "MIT",
+  "keywords": ["security", "audit", "owasp", "jwt", "oauth", "supabase", "rls"]
+}
