@@ -34,7 +34,7 @@ echo "$SKILLS" | while read -r categoria nome; do
   fi
   mkdir -p "$para"
   rsync -a --delete \
-    --exclude '.git' --exclude 'README.md' --exclude 'LICENSE' --exclude 'CHANGELOG.md' --exclude '.DS_Store' \
+    --exclude '.git' --exclude 'README.md' --exclude 'README.pt.md' --exclude 'LICENSE' --exclude 'CHANGELOG.md' --exclude '.DS_Store' \
     "$de/" "$para/"
   echo "ok  $categoria/skills/$nome"
 done
