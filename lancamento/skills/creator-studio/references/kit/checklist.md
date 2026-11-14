@@ -66,9 +66,9 @@ Para o utilizador importar no calendário dele (tu não crias eventos na conta d
 ```
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//launch-studio//PT
+PRODID:-//creator-studio//PT
 BEGIN:VEVENT
-UID:lancamento-ph-20261117@launch-studio
+UID:lancamento-ph-20261117@creator-studio
 DTSTAMP:20261111T120000Z
 DTSTART:20261117T080100Z
 DTEND:20261117T083000Z

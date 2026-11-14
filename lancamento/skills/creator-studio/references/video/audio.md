@@ -157,4 +157,4 @@ A música começa no fotograma 0 com o primeiro tempo forte; se a faixa tiver in
 
 ## 6. Créditos
 
-`creditos.md` (modelo em `assets/creditos-template.md`) regista, para cada som e fonte tipográfica: origem, autor, licença, link e data em que foi verificada, e o texto de atribuição pronto a colar na descrição do post, quando obrigatório. Música gerada pela skill: "Música original gerada com launch-studio (sem licença de terceiros)". Diz ao utilizador onde colar a atribuição.
+`creditos.md` (modelo em `assets/creditos-template.md`) regista, para cada som e fonte tipográfica: origem, autor, licença, link e data em que foi verificada, e o texto de atribuição pronto a colar na descrição do post, quando obrigatório. Música gerada pela skill: "Música original gerada com creator-studio (sem licença de terceiros)". Diz ao utilizador onde colar a atribuição.

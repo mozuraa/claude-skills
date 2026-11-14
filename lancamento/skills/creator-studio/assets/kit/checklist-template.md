@@ -1,6 +1,6 @@
 # Checklist de lançamento — [Nome do projeto]
 
-> Dia de lançamento (L): **[data]** · fuso: **[ex.: Europe/Lisbon]** · preparado pelo launch-studio em [data].
+> Dia de lançamento (L): **[data]** · fuso: **[ex.: Europe/Lisbon]** · preparado pelo creator-studio em [data].
 > ✋ = só o utilizador pode fazer (contas, botões de publicar, pagamentos).
 
 ## Antes

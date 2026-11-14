@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Composição · launch-studio</title>
+<title>Composição · creator-studio</title>
 <!--
-  launch-studio · modelo de composição (motor 🎨 Estúdio)
+  creator-studio · modelo de composição (motor 🎨 Estúdio)
 
   Cada fotograma é função pura do tempo t. Nada de setTimeout, animações CSS a correr sozinhas
   ou Math.random() — assim a captura fotograma a fotograma dá sempre o mesmo resultado.
@@ -437,7 +437,7 @@ const COMPOSICAO = {
   /* ---------- API ---------- */
   const proximoFotograma = () => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
   window.pronto = Promise.all([document.fonts ? document.fonts.ready : null, ...imagens]).then(() => {
-    if (avisos.length) console.warn("launch-studio:", [...new Set(avisos)].join("; "));
+    if (avisos.length) console.warn("creator-studio:", [...new Set(avisos)].join("; "));
     return true;
   });
   window.duracao = () => C.duracao;

@@ -1,6 +1,6 @@
 # Plano — [Nome do projeto]
 
-> Gerado pelo launch-studio em [data]. Este ficheiro é o contrato do vídeo: tudo o que está no vídeo vem daqui.
+> Gerado pelo creator-studio em [data]. Este ficheiro é o contrato do vídeo: tudo o que está no vídeo vem daqui.
 
 ## As 10 perguntas
 

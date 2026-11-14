@@ -1,9 +1,9 @@
 ---
-name: launch-studio
-description: Estúdio de lançamento com três modos — 🎬 VÍDEO (transforma o projeto da pasta atual — site, app, jogo ou ferramenta — num vídeo de lançamento de 15–30 s em 9:16, 1:1 e 16:9 a partir de um só plano, com capturas reais, tons, música licenciada, legendas .srt, voz opcional e PT/EN), 📣 KIT DE LANÇAMENTO (textos para X, LinkedIn, Instagram, TikTok, Product Hunt, Show HN e Reddit, imagem OG, miniatura, GIF para o README, vídeo de pré-visualização da App Store e checklist com calendário) e 🔄 NOVIDADES (vídeo e post do que mudou numa versão, a partir do git log ou do CHANGELOG). Faz perguntas com opções, dá opinião honesta e confirma antes do que é pesado. Usa sempre que o utilizador disser "/launch-studio", "/brag", "vídeo de lançamento", "launch video", "promo", "trailer da app", "quero mostrar o que fiz", "como anuncio isto", "Product Hunt", "Show HN", "imagem para partilhar", "GIF para o README", "app preview", "o que há de novo", "release notes" ou "anunciar a versão nova" — mesmo sem dizer "vídeo".
+name: creator-studio
+description: Estúdio de lançamento com três modos — 🎬 VÍDEO (transforma o projeto da pasta atual — site, app, jogo ou ferramenta — num vídeo de lançamento de 15–30 s em 9:16, 1:1 e 16:9 a partir de um só plano, com capturas reais, tons, música licenciada, legendas .srt, voz opcional e PT/EN), 📣 KIT DE LANÇAMENTO (textos para X, LinkedIn, Instagram, TikTok, Product Hunt, Show HN e Reddit, imagem OG, miniatura, GIF para o README, vídeo de pré-visualização da App Store e checklist com calendário) e 🔄 NOVIDADES (vídeo e post do que mudou numa versão, a partir do git log ou do CHANGELOG). Faz perguntas com opções, dá opinião honesta e confirma antes do que é pesado. Usa sempre que o utilizador disser "/creator-studio", "/brag", "vídeo de lançamento", "launch video", "promo", "trailer da app", "quero mostrar o que fiz", "como anuncio isto", "Product Hunt", "Show HN", "imagem para partilhar", "GIF para o README", "app preview", "o que há de novo", "release notes" ou "anunciar a versão nova" — mesmo sem dizer "vídeo".
 ---
 
-# Launch studio
+# Creator studio
 
 Fizeste uma coisa. Agora mostra-a. Este estúdio tem três modos que se encadeiam: **🎬 Vídeo → 📣 Kit de lançamento → 🔄 Novidades**. Em todos trabalhas **com** o utilizador: fazes perguntas com opções, mostras o que vais fazer, dás a tua opinião franca e só avanças para o que é pesado com a autorização dele.
 
@@ -29,7 +29,7 @@ Linguagem natural ou opções. Aceita os nomes em português e em inglês (inclu
 | `--foco` | uma funcionalidade, ecrã ou versão | o produto todo |
 | `--titulo` / `--title` | nome a mostrar | o do projeto |
 
-Exemplos: `/launch-studio` · `/launch-studio --tom trailer --formato 9:16` · "faz um vídeo disto para o TikTok, em inglês, com a minha voz" · "prepara o lançamento no Product Hunt" · "o que mudou desde a 1.2? faz um post".
+Exemplos: `/creator-studio` · `/creator-studio --tom trailer --formato 9:16` · "faz um vídeo disto para o TikTok, em inglês, com a minha voz" · "prepara o lançamento no Product Hunt" · "o que mudou desde a 1.2? faz um post".
 
 ## Escolher o modo
 
@@ -77,7 +77,7 @@ Objetivo: um vídeo curto, específico deste projeto, que um desconhecido perceb
 
 ### 1. Briefing rápido
 
-Se o pedido não diz, pergunta de uma vez (com opções e a tua recomendação primeiro): **foco** (o produto todo / uma funcionalidade / uma versão) · **tom** (2–3 tons que encaixam, de `tons.md`) · **formatos** (todos / só vertical / só horizontal) · **som** (música gerada / música tua / sem música; voz sim/não; língua). Se o utilizador só escreveu "/launch-studio" ou "/brag", faz no máximo estas perguntas e segue — ou, se ele disser "surpreende-me", escolhe tu e diz o quê.
+Se o pedido não diz, pergunta de uma vez (com opções e a tua recomendação primeiro): **foco** (o produto todo / uma funcionalidade / uma versão) · **tom** (2–3 tons que encaixam, de `tons.md`) · **formatos** (todos / só vertical / só horizontal) · **som** (música gerada / música tua / sem música; voz sim/não; língua). Se o utilizador só escreveu "/creator-studio" ou "/brag", faz no máximo estas perguntas e segue — ou, se ele disser "surpreende-me", escolhe tu e diz o quê.
 
 ### 2. Inspecionar
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-launch-studio · legendas.py
+creator-studio · legendas.py
 Converte uma tabela simples de tempos e textos num ficheiro .srt e verifica a legibilidade.
 Turns a simple timing table into an .srt file and checks readability. Python 3, no dependencies.
 

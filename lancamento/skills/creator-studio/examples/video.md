@@ -4,7 +4,7 @@ Projeto fictício: **Migalha**, uma app web que divide a conta do jantar. Pasta 
 
 ---
 
-**Utilizador:** /launch-studio
+**Utilizador:** /creator-studio
 
 **Claude:** Vou fazer o vídeo de lançamento do Migalha. Antes, quatro escolhas rápidas:
 

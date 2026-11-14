@@ -1,6 +1,6 @@
 # Textos de lançamento — [Nome do projeto]
 
-> Preparado pelo launch-studio em [data]. Limites revistos em novembro de 2026 — confirma na plataforma se um texto estiver perto do limite.
+> Preparado pelo creator-studio em [data]. Limites revistos em novembro de 2026 — confirma na plataforma se um texto estiver perto do limite.
 > **Quem publica és tu.** Nada disto foi publicado nem agendado.
 
 **Link principal:** [URL / App Store / Google Play / repositório]

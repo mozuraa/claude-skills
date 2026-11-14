@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// launch-studio · capturar.mjs
+// creator-studio · capturar.mjs
 // Captura a composição (cena.html) fotograma a fotograma em PNG, com Playwright e o browser que já existe.
 // Captures the composition frame by frame as PNG, using Playwright and an already-installed browser.
 //

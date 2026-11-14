@@ -6,13 +6,13 @@
 
 | Faixa | Autor | Origem / link | Licença | Atribuição obrigatória? | Verificado em |
 |---|---|---|---|---|---|
-| [Música original] | gerada com launch-studio (`audio.py batida --estilo … --semente …`) | — | sem licença de terceiros | não | [data] |
+| [Música original] | gerada com creator-studio (`audio.py batida --estilo … --semente …`) | — | sem licença de terceiros | não | [data] |
 
 ## Efeitos sonoros
 
 | Som | Origem | Licença |
 |---|---|---|
-| clique, toque, pop, whoosh, ding, tecla, impacto, sucesso | gerados com launch-studio (`audio.py sons`) | sem licença de terceiros |
+| clique, toque, pop, whoosh, ding, tecla, impacto, sucesso | gerados com creator-studio (`audio.py sons`) | sem licença de terceiros |
 
 ## Voz
 

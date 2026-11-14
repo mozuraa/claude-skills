@@ -19,7 +19,7 @@ Todas as [skills](#o-que-é-uma-skill) para o **Claude** que criei, organizadas 
 | 💡 | **[Ideias](ideias/)** | `ideias-funcionalidades` · `ideias-monetizacao` · `brainstorming` |
 | 🧑‍💻 | **[Programação](programacao/)** | `code-for-noobs` |
 | 🤖 | **[IA](ia/)**: prompts | `prompt-studio` |
-| 📣 | **[Lançamento](lancamento/)**: vídeo, kit e novidades | `launch-studio` |
+| 📣 | **[Lançamento](lancamento/)**: vídeo, kit e novidades | `creator-studio` |
 | 🧹 | **[Manutenção](manutencao/)**: GitHub e computador | `clean-studio` |
 | 🎨 | **[Design](design/)**: animação, vocabulário, fundos, estilos | `ui-motion-ux` · `design-vocabulary` · `depth-backgrounds` · `graphic-design-styles` |
 
@@ -39,9 +39,9 @@ Todas as [skills](#o-que-é-uma-skill) para o **Claude** que criei, organizadas 
 | perceber código, um erro ou um termo técnico | [`code-for-noobs`](programacao/skills/code-for-noobs/SKILL.md) | |
 | uma **prompt** nova para o ChatGPT, o Claude, um GPT, um agente ou o Midjourney | [`prompt-studio`](ia/skills/prompt-studio/SKILL.md) | 🛠️ Criar |
 | melhorar uma **prompt**, perceber porque falha ou passá-la para outro modelo | [`prompt-studio`](ia/skills/prompt-studio/SKILL.md) | ✏️ Editar |
-| um **vídeo de lançamento** do que criei (site, app, jogo) | [`launch-studio`](lancamento/skills/launch-studio/SKILL.md) | 🎬 Vídeo |
-| **anunciar** o meu projeto: posts, Product Hunt, Show HN, imagem OG, GIF | [`launch-studio`](lancamento/skills/launch-studio/SKILL.md) | 📣 Kit |
-| mostrar o que há de **novo** numa versão | [`launch-studio`](lancamento/skills/launch-studio/SKILL.md) | 🔄 Novidades |
+| um **vídeo de lançamento** do que criei (site, app, jogo) | [`creator-studio`](lancamento/skills/creator-studio/SKILL.md) | 🎬 Vídeo |
+| **anunciar** o meu projeto: posts, Product Hunt, Show HN, imagem OG, GIF | [`creator-studio`](lancamento/skills/creator-studio/SKILL.md) | 📣 Kit |
+| mostrar o que há de **novo** numa versão | [`creator-studio`](lancamento/skills/creator-studio/SKILL.md) | 🔄 Novidades |
 | **arrumar os meus repos** no GitHub (parados, descrições, branches, segredos expostos) | [`clean-studio`](manutencao/skills/clean-studio/SKILL.md) | 🐙 GitHub |
 | **libertar espaço** ou arrumar pastas no Mac/PC | [`clean-studio`](manutencao/skills/clean-studio/SKILL.md) | 💻 Computador |
 | melhores **animações** e UX na minha interface | [`ui-motion-ux`](design/skills/ui-motion-ux/SKILL.md) | |
@@ -86,7 +86,7 @@ Cada estúdio tem três modos que se encadeiam: **💡 Idear → 🛠️ Criar �
 
 | | Skill | O que faz | Versão |
 |---|---|---|---|
-| <img src="lancamento/skills/launch-studio/icon.svg" width="32" alt=""> | [**launch-studio**](https://github.com/mozuraa/claude-skill-launch-studio) | **Fizeste uma coisa? Mostra-a.** Inspirado no [/brag](https://github.com/latent-spaces/brag), com tudo o que ele faz e mais.<br>🎬 Vídeo de lançamento de 15–30 s em 9:16, 1:1 e 16:9, com capturas reais, 11 tons, música original ou licenciada, legendas e voz opcional.<br>📣 Kit: textos para X, LinkedIn, Instagram, TikTok, Product Hunt, Show HN e Reddit, imagem OG, GIF, pré-visualização da App Store, checklist e calendário.<br>🔄 Novidades: vídeo e posts do que mudou numa versão. | 1.0.0 |
+| <img src="lancamento/skills/creator-studio/icon.svg" width="32" alt=""> | [**creator-studio**](https://github.com/mozuraa/claude-skill-creator-studio) | **Fizeste uma coisa? Mostra-a.** Inspirado no [/brag](https://github.com/latent-spaces/brag), com tudo o que ele faz e mais.<br>🎬 Vídeo de lançamento de 15–30 s em 9:16, 1:1 e 16:9, com capturas reais, 11 tons, música original ou licenciada, legendas e voz opcional.<br>📣 Kit: textos para X, LinkedIn, Instagram, TikTok, Product Hunt, Show HN e Reddit, imagem OG, GIF, pré-visualização da App Store, checklist e calendário.<br>🔄 Novidades: vídeo e posts do que mudou numa versão. | 1.1.0 |
 
 #### 🧹 Manutenção
 
@@ -140,13 +140,13 @@ git clone https://github.com/mozuraa/claude-skill-NOME.git ~/.claude/skills/NOME
 Todas de uma vez:
 
 ```bash
-for s in website-studio app-studio ideias-funcionalidades ideias-monetizacao brainstorming code-for-noobs prompt-studio launch-studio clean-studio; do git clone https://github.com/mozuraa/claude-skill-$s.git ~/.claude/skills/$s; done
+for s in website-studio app-studio ideias-funcionalidades ideias-monetizacao brainstorming code-for-noobs prompt-studio creator-studio clean-studio; do git clone https://github.com/mozuraa/claude-skill-$s.git ~/.claude/skills/$s; done
 ```
 
 Atualizar todas:
 
 ```bash
-for s in website-studio app-studio ideias-funcionalidades ideias-monetizacao brainstorming code-for-noobs prompt-studio launch-studio clean-studio; do git -C ~/.claude/skills/$s pull; done
+for s in website-studio app-studio ideias-funcionalidades ideias-monetizacao brainstorming code-for-noobs prompt-studio creator-studio clean-studio; do git -C ~/.claude/skills/$s pull; done
 ```
 
 **3. App Claude / claude.ai.** Abre o repositório da skill, carrega em **Code → Download ZIP** e carrega o ZIP nas **Definições**, na secção **Skills** (em *Capacidades*).
@@ -173,7 +173,7 @@ claude-skills/
 ├── ia/                               # 🤖 plugin "ia"
 │   └── skills/prompt-studio/         # SKILL.md · references/ · assets/modelos
 ├── lancamento/                       # 📣 plugin "lancamento"
-│   └── skills/launch-studio/         # SKILL.md · references/{video,kit,novidades} · assets/
+│   └── skills/creator-studio/         # SKILL.md · references/{video,kit,novidades} · assets/
 ├── manutencao/                       # 🧹 plugin "manutencao"
 │   └── skills/clean-studio/          # SKILL.md · references/ (github, mac, windows...)
 ├── design/                           # 🎨 plugin "design" (skills guardadas só aqui)

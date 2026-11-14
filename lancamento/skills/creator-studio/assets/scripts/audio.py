@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-launch-studio · audio.py
+creator-studio · audio.py
 Música original, efeitos sonoros e grelha de batida — só com Python 3, sem instalar nada.
 Original music, sound effects and beat grid — Python 3 standard library only.
 
@@ -755,7 +755,7 @@ def cmd_grelha(a):
 
 
 def main():
-    p = argparse.ArgumentParser(description="launch-studio · música, efeitos e grelha (só Python 3).")
+    p = argparse.ArgumentParser(description="creator-studio · música, efeitos e grelha (só Python 3).")
     sub = p.add_subparsers(dest="cmd")
 
     b = sub.add_parser("batida", help="gera uma base musical original")
