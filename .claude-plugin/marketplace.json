@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Biblioteca de Claude Skills de mozuraa · mozuraa's Claude Skills library",
-    "version": "3.3.0"
+    "version": "3.4.0"
   },
   "plugins": [
     {
@@ -111,6 +111,25 @@
         "github-cli",
         "repository-management",
         "secrets-detection"
+      ]
+    },
+    {
+      "name": "design",
+      "source": "./design",
+      "description": "Design de interfaces: animação e leis de UX, vocabulário de design, fundos com profundidade, estilos gráficos e inspiração · UI design: motion and UX laws, design vocabulary, depth backgrounds, graphic styles and inspiration.",
+      "version": "1.0.0",
+      "author": {
+        "name": "mozuraa"
+      },
+      "category": "design",
+      "keywords": [
+        "ui-design",
+        "animation",
+        "ux-laws",
+        "design-vocabulary",
+        "backgrounds",
+        "graphic-design",
+        "inspiration"
       ]
     }
   ]
