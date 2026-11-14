@@ -1,0 +1,10 @@
+{
+  "name": "alojamento",
+  "version": "1.0.0",
+  "description": "Pôr projetos online sem pagar: stack de alojamento grátis, com limites, letras miudinhas e quando passar a pago · Free hosting stack for side projects, with limits, fine print and when to upgrade.",
+  "author": { "name": "mozuraa", "url": "https://github.com/mozuraa" },
+  "homepage": "https://github.com/mozuraa/claude-skills/tree/main/alojamento",
+  "repository": "https://github.com/mozuraa/claude-skills",
+  "license": "MIT",
+  "keywords": ["free-hosting", "cloudflare", "neon", "serverless", "indie-hackers"]
+}
