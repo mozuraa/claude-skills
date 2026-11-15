@@ -1,8 +1,8 @@
 # Claude Skills — mozuraa's library
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-![Skills](https://img.shields.io/badge/skills-13-D97757)
-![Categories](https://img.shields.io/badge/categories-7-2EAD6B)
+![Skills](https://img.shields.io/badge/skills-9-D97757)
+![Categories](https://img.shields.io/badge/categories-6-2EAD6B)
 ![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin%20marketplace-8A63D2)
 
 **🇬🇧 English · [🇵🇹 Português](README.pt.md)**
@@ -21,7 +21,6 @@ All the [skills](#what-is-a-skill) for **Claude** I've created, organized by cat
 | 🤖 | **[AI](ia/)** (`ia`): prompts | `prompt-studio` |
 | 📣 | **[Launch](lancamento/)** (`lancamento`): video, kit and what's new | `creator-studio` |
 | 🧹 | **[Maintenance](manutencao/)** (`manutencao`): GitHub and computer | `clean-studio` |
-| 🎨 | **[Design](design/)** (`design`): motion, vocabulary, backgrounds, styles | `ui-motion-ux` · `design-vocabulary` · `depth-backgrounds` · `graphic-design-styles` |
 
 ### Which skill do I need?
 
@@ -44,10 +43,6 @@ All the [skills](#what-is-a-skill) for **Claude** I've created, organized by cat
 | to show what's **new** in a release | [`creator-studio`](lancamento/skills/creator-studio/SKILL.md) | 🔄 What's new |
 | to **tidy my GitHub repos** (stale repos, descriptions, branches, leaked secrets) | [`clean-studio`](manutencao/skills/clean-studio/SKILL.md) | 🐙 GitHub |
 | to **free up space** or tidy folders on my Mac/PC | [`clean-studio`](manutencao/skills/clean-studio/SKILL.md) | 💻 Computer |
-| better **animations** and UX in my interface | [`ui-motion-ux`](design/skills/ui-motion-ux/SKILL.md) | |
-| the right **design term** for a problem (and its fix) | [`design-vocabulary`](design/skills/design-vocabulary/SKILL.md) | |
-| a **background** with depth for a design | [`depth-backgrounds`](design/skills/depth-backgrounds/SKILL.md) | |
-| a **graphic style** (Y2K, Swiss, cyberpunk...) with colors, fonts and image prompts | [`graphic-design-styles`](design/skills/graphic-design-styles/SKILL.md) | |
 
 You don't have to choose: once the skills are installed, Claude picks the right one (and the right mode) whenever a request fits.
 
@@ -94,18 +89,7 @@ Each studio has three linked modes: **💡 Ideate → 🛠️ Create → 🩺 Di
 |---|---|---|---|
 | <img src="manutencao/skills/clean-studio/icon.svg" width="32" alt=""> | [**clean-studio**](https://github.com/mozuraa/claude-skill-clean-studio) | **Tidy up without losing anything.** It analyses, shows a report and a plan, and only acts after you confirm (reversible actions first).<br>🐙 GitHub: inventory, archiving stale repos, descriptions and topics, merged branches, unchanged forks, leaked-secret alerts.<br>💻 Computer (Mac and Windows): what's taking up space, caches and `node_modules`, clones already on GitHub, duplicates, Downloads and folder structure. | 1.0.0 |
 
-#### 🎨 Design
-
-Skills for better-looking, easier-to-use interfaces. Each one credits its source and separates what came from it from what was added.
-
-| | Skill | What it does | Source |
-|---|---|---|---|
-| | [**ui-motion-ux**](design/skills/ui-motion-ux/SKILL.md) | Disney's 12 animation principles applied to UI, plus 8 UX laws (Fitts, Hick, Doherty...), with durations, easings, CSS tokens and a review checklist. | [@charles.unemployed](https://www.instagram.com/reel/DfphRvFBx54/) |
-| | [**design-vocabulary**](design/skills/design-vocabulary/SKILL.md) | 25 design terms explained, each with its fix (kerning, OKLCH, layout shift, safe area, empty state...). | [@charles.unemployed](https://www.instagram.com/reel/Dfh24cUh4KF/) |
-| | [**depth-backgrounds**](design/skills/depth-backgrounds/SKILL.md) | 22 backgrounds for less flat designs (grain, fluted glass, blueprint, paper, ASCII...), with CSS/SVG recipes. | [@charles.unemployed](https://www.instagram.com/reel/DffEWqKhKWo/) |
-| | [**graphic-design-styles**](design/skills/graphic-design-styles/SKILL.md) | 20 graphic design styles (minimalism, Y2K, Swiss, cyberpunk...) with colors, fonts, uses and ready-made image prompts. | [@gobirdmasterclass](https://www.instagram.com/reel/Dcl9lNHuG5c/) |
-
-These skills are copied from the **design-studio** repository (private for now, still being organized).
+Skills derived from other people's content (for example, from Instagram posts) are kept in a separate private repository and are not part of this public library.
 
 The list is also available as data in [`skills.json`](skills.json).
 
@@ -126,7 +110,6 @@ Then install the categories you want:
 /plugin install ia@mozuraa-skills
 /plugin install lancamento@mozuraa-skills
 /plugin install manutencao@mozuraa-skills
-/plugin install design@mozuraa-skills
 ```
 
 Get updates with `/plugin marketplace update mozuraa-skills`. Installed this way, skills are prefixed with their category (e.g. `/estudios:website-studio`).
@@ -178,8 +161,6 @@ claude-skills/
 │   └── skills/creator-studio/         # SKILL.md · references/{video,kit,novidades} · assets/
 ├── manutencao/                       # 🧹 "manutencao" plugin
 │   └── skills/clean-studio/          # SKILL.md · references/ (github, mac, windows...)
-├── design/                           # 🎨 "design" plugin (copied from design-studio)
-│   └── skills/{ui-motion-ux,design-vocabulary,depth-backgrounds,graphic-design-styles}/
 ├── skills.json                       # the list as data
 └── scripts/sincronizar.sh            # copies the skills here from their own repositories
 ```
